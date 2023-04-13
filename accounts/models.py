@@ -12,8 +12,9 @@ class Account(AbstractUser):
     avatar = models.ImageField(
         null=True,
         blank=True,
-        upload_to='user_pic',
-        verbose_name='Аватар'
+        upload_to="user_pic",
+        verbose_name="Аватар",
+        default="user_pic/default_user_pic.jpeg",
     )
     is_employer = models.BooleanField(verbose_name="работодатель", null=False, default=False)
     USERNAME_FIELD = "email"
