@@ -76,8 +76,12 @@ WSGI_APPLICATION = "hh_app.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "hethunter_new",
+        "USER": "postgres",
+        "PASSWORD": "alikhan2005",
+        "HOST": "localhost",
+        "PORT": "",
     }
 }
 
@@ -122,7 +126,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads/")
 MEDIA_URL = "/uploads/"
 
-AUTH_USER_MODEL = "accounts.Account"
+# AUTH_USER_MODEL = "accounts.Account"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
