@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -77,9 +79,9 @@ WSGI_APPLICATION = "hh_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "hethunter_new",
-        "USER": "postgres",
-        "PASSWORD": "alikhan2005",
+        "NAME": "hh_new",
+        "USER": "anakess",
+        "PASSWORD": "Aa123@",
         "HOST": "localhost",
         "PORT": "",
     }
@@ -126,7 +128,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads/")
 MEDIA_URL = "/uploads/"
 
-# AUTH_USER_MODEL = "accounts.Account"
+AUTH_USER_MODEL = "accounts.Account"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
