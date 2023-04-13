@@ -15,7 +15,7 @@ class Account(AbstractUser):
         upload_to='user_pic',
         verbose_name='Аватар'
     )
-    is_employer = models.BooleanField(verbose_name="работодатель", null=False)
+    is_employer = models.BooleanField(verbose_name="работодатель", null=False, default=False)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     object = UserManager()
