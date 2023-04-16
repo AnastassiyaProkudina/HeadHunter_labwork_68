@@ -21,14 +21,21 @@ class CustomUserCreationForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ('is_employer', 'username', 'avatar', 'password', 'password_confirm', 'email', 'phone',)
+        fields = ('is_employer', 'username', 'avatar', 'password', 'password_confirm', 'email', 'phone', 'bio')
         labels = {'username': 'Имя',
                   'avatar': 'Фото профиля',
                   'password': 'пароль',
                   'password_confirm': 'подтверждение пароля',
                   'email': 'Email',
-                  'phone': 'Phone',
-                  'is_employer': 'Работодатель'}
+                  'phone': 'Телефон',
+                  'is_employer': 'Работодатель',
+                  'bio': 'Напишите немного о себе'}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].help_text = None
+        for visible in self.visible_fields():
+            visible.field.widget.attrs["placeholder"] = ""
 
     def clean(self):
         cleaned_data = super().clean()

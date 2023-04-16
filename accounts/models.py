@@ -16,6 +16,7 @@ class Account(AbstractUser):
         verbose_name="Аватар",
         default="user_pic/default_user_pic.jpeg",
     )
+    bio = models.TextField(verbose_name="Информация о пользователе", blank=True)
     is_employer = models.BooleanField(verbose_name="работодатель", null=False, default=False)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
