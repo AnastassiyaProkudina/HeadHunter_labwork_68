@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ваше резюме{% endblock %}
+{% block content %}
+    <div class="content-box">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="block mb-3">
+                <h4>Контактные данные</h4>
+                <p>Имя: {{ form.cv.first_name }}</p>
+                <p>Фамилия: {{ form.cv.last_name }}</p>
+                {{ form.contacts.as_p }}
+                <h4>Специальность</h4>
+                <p>Желаемая должность: {{ form.cv.position }}</p>
+                <p>Категория: {{ form.cv.job_category }}</p>
+                <p>Зарплата: {{ form.cv.salary }}</p>
+            </div>
+            <div class="block my-3">
+                <h4>Образование</h4>
+                <p>Уровень образования: {{ form.cv.education_level }}</p><input type="hidden" name="{{ education.pk }}" id="education.pk">
+                <div id="add_education">
+                    <input type="hidden" name="" id="education_pk">
+                </div>
+                <div class="btn btn-secondary" style="cursor: pointer" data-bs-toggle="modal"
+                     data-bs-target="#EducationModal">
+                    Добавить сведения об образовании
+                </div>
+                {% include 'partial/education_modal.html' %}
+            </div>
+            <div class="block my-3">
+                <h4>Опыт работы</h4>
+                <div id="add_experience">
+                    <p>Места работы:</p>
+                </div>
+                <div class="btn btn-secondary" style="cursor: pointer" data-bs-toggle="modal"
+                     data-bs-target="#ExperienceModal">
+                    Добавить место работы
+                </div>
+                {% include 'partial/experience_modal.html' %}
+            </div>
+            <div class="block my-3">
+                <button type="submit" value="comment" class="btn btn-dark">Сохранить и опубликовать</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

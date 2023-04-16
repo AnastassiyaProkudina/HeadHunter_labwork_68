@@ -44,11 +44,11 @@
         </div>
     </section>
     <div>
-        <div class="container" style="justify-content: space-between">
-            <div class="card-group">
-                {% for cv in user_obj.cv.all %}
-                    {% include 'partial/cv_card.html' with header='cvs' %}
-                {% endfor %}
-            </div>
-        </div>
+{#        <div class="container" style="justify-content: space-between">#}
+{#            <div class="card-group">#}
+{#                {% for cv in user_obj.cv.all %}#}
+{#                    {% include 'partial/cv_card.html' with header='cvs' %}#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
 {% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<div class="modal modal-lg fade" id="ExperienceModal" tabindex="-1"
+     aria-labelledby="CommentModalLabel{{ post.id }}"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-2">Опыт работы</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="card mb-3" style="border: none">
+                <div class="card-body">
+                    <input type="text" id="started_at_" class="form-control" placeholder="Начало работы"/><br>
+                    <input type="text" id="finished_at_" class="form-control" placeholder="Окончание"/><br>
+                    <input type="text" id="company_name" class="form-control" placeholder="Организация"/><br>
+                    <input type="text" id="position" class="form-control" placeholder="Должность"/><br>
+                    <input type="text" id="duties" class="form-control" placeholder="Обязанности на рабочем месте"/><br>
+                    <input type="button" id="btn-add-experience" value="Отправить"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
