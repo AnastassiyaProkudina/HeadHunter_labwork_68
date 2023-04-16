@@ -1,0 +1,23 @@
+{% load django_bootstrap5 %}
+<div class="modal fade" id="CVChangeModal{{ cv.id }}" tabindex="-1" aria-labelledby="CVChangeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="post" action="{% url 'cv_change' cv.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ChangeProfileModalLabel">Редактирование резюме</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% for field in change_cv_form %}
+                        {% bootstrap_field field %}
+                    {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

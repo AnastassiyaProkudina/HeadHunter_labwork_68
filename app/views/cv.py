@@ -4,7 +4,7 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import CreateView, DeleteView
+from django.views.generic import CreateView, DeleteView, UpdateView
 
 from app.forms import CVCreationMultiForm
 from app.models import Education, Experience, CV
@@ -58,3 +58,17 @@ def json_cv_delete(request, id, *args, **kwargs):
     return JsonResponse({'success': True, 'message': 'Delete', 'id': id})
 
 
+class CVChangeView(UpdateView):
+    model = CV
+    form_class = CVCreationMultiForm
+
+    def get_form_kwargs(self):
+        kwargs = super(CVChangeView, self).get_form_kwargs()
+        kwargs.update(instance={
+            'cv': self.object,
+            'contacts': self.object.contacts,
+        })
+        return kwargs
+
+    def get_success_url(self):
+        return self.request.META.get("HTTP_REFERER")

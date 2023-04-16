@@ -41,3 +41,19 @@ class CVCreationMultiForm(MultiModelForm):
         return objects
 
 
+# class CVChangeMultiForm(MultiModelForm):
+#     form_classes = {
+#         "cv": CVCreateForm,
+#         "contacts": ContactsForm,
+#     }
+#
+#     def save(self, commit=True):
+#         objects = super(CVCreationMultiForm, self).save(commit=False)
+#
+#         if commit:
+#             contacts = objects["contacts"]
+#             contacts.save()
+#             cv = objects["cv"]
+#             cv.contacts = contacts
+#             cv.save()
+#         return objects

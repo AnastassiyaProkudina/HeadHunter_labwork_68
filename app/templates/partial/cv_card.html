@@ -1,5 +1,5 @@
 {% load static %}
-<div class="card-size card card-shadow m-2 cv-{{cv.id}}">
+<div class="card-size card card-shadow m-2 cv-{{ cv.id }}">
     <div class="card-header">
         {% if header == 'cvs' %}
             <div class="row g-o">
@@ -7,22 +7,25 @@
                     <p class="card-text">{{ cv.position }}</p>
                 </div>
                 <div class="col-sm-1 mx-1" data-bs-toggle="modal"
-                     data-bs-target="#CvModal{{ cv.id }}">
+                     data-bs-target="#CVDetailModal{{ cv.id }}">
                     <a class="" href="#" role="button">
                         <iconify-icon icon="material-symbols:folder-open-outline" style="color: #0B0C10;"
                                       width="30"></iconify-icon>
                     </a>
                 </div>
-                {% include 'partial/cv_modal.html' %}
+                {% include 'partial/cv_modal_detail.html' %}
                 <div class="col-sm-1 mx-1">
-                    <a class="" href="#" role="button">
-                        <iconify-icon icon="material-symbols:folder-managed-outline-sharp" style="color: #0B0C10;"
+                    <button type="button"  style="border: none; background-color:inherit;" data-bs-toggle="modal"
+                            data-bs-target="#CVChangeModal{{ cv.id }}">
+                            <iconify-icon icon="material-symbols:folder-managed-outline-sharp" style="color: #0B0C10;"
                                       width="30"></iconify-icon>
-                    </a>
+                    </button>
                 </div>
+                {% include 'partial/cv_modal_change.html' %}
                 <div class="col-sm-1 mx-1">
                     {% csrf_token %}
-                     <button type="button" data-id={{cv.id}} class="delete-post" style="border: none; background-color:inherit;">
+                    <button type="button" data-id={{ cv.id }} class="button-in-cv-card delete-post"
+                            style="border: none; background-color:inherit;">
                         <iconify-icon icon="material-symbols:folder-delete-outline-sharp" style="color: #0B0C10;"
                                       width="30"></iconify-icon>
                     </button>

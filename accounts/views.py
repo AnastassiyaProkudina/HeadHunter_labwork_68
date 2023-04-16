@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView, CreateView, DetailView, UpdateView
 
 from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm
+from app.forms import CVCreationMultiForm
 
 
 class LoginView(TemplateView):
@@ -61,6 +62,7 @@ class AccountView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         kwargs["change_form"] = UserChangeForm(instance=self.request.user)
+        kwargs["change_cv_form"] = CVCreationMultiForm()
         return super().get_context_data(**kwargs)
 
 
