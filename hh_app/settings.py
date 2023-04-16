@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_bootstrap5",
     "accounts",
-    "vacancy_app"
+    "app"
 ]
 
 MIDDLEWARE = [
@@ -81,9 +81,9 @@ WSGI_APPLICATION = "hh_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "het_hunter_lab",
-        "USER": "postgres",
-        "PASSWORD": "alikhan2005",
+        "NAME": "hh_new",
+        "USER": "anakess",
+        "PASSWORD": "Aa123@",
         "HOST": "localhost",
         "PORT": "",
     }

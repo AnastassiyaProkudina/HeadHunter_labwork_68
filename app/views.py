@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import RedirectView, ListView
 
 
-from vacancy_app.models import Vacancy
+from app.models import Vacancy
 
 
 class IndexView(ListView):

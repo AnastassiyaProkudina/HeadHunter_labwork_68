@@ -1,6 +1,6 @@
 from django.urls import path
 
-from vacancy_app.views import IndexView, IndexRedirectView
+from app.views import IndexView, IndexRedirectView
 
 
 urlpatterns = [
