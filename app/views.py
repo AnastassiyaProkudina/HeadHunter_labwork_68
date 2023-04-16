@@ -8,15 +8,10 @@ from app.models import Vacancy
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = "index.html"
     model = Vacancy
-    context_object_name = 'vacancies'
+    context_object_name = "vacancies"
 
 
 class IndexRedirectView(RedirectView):
-    pattern_name = 'index'
-
-
-
-
-
+    pattern_name = "index"

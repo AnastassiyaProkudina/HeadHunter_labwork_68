@@ -17,7 +17,9 @@ class Account(AbstractUser):
         default="user_pic/default_user_pic.jpeg",
     )
     bio = models.TextField(verbose_name="Информация о пользователе", blank=True)
-    is_employer = models.BooleanField(verbose_name="работодатель", null=False, default=False)
+    is_employer = models.BooleanField(
+        verbose_name="работодатель", null=False, default=False
+    )
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     object = UserManager()
@@ -26,5 +28,5 @@ class Account(AbstractUser):
         return self.username
 
     class Meta:
-        verbose_name = 'Профиль'
-        verbose_name_plural = 'Профили'
+        verbose_name = "Профиль"
+        verbose_name_plural = "Профили"

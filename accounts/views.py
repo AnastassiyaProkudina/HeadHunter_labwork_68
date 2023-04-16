@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
-from django.views.generic import TemplateView, CreateView, DetailView
+from django.views.generic import TemplateView, CreateView, DetailView, UpdateView
 
-from accounts.forms import LoginForm, CustomUserCreationForm
+from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm
 
 
 class LoginView(TemplateView):
@@ -40,9 +40,9 @@ def logout_view(request):
 
 
 class RegisterView(CreateView):
-    template_name = 'register.html'
+    template_name = "register.html"
     form_class = CustomUserCreationForm
-    success_url = '/'
+    success_url = "/"
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -50,7 +50,7 @@ class RegisterView(CreateView):
             user = form.save()
             login(request, user)
             return redirect(self.success_url)
-        context = {'form': form}
+        context = {"form": form}
         return self.render_to_response(context)
 
 
@@ -58,3 +58,16 @@ class AccountView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = "profile.html"
     context_object_name = "user_obj"
+
+    def get_context_data(self, **kwargs):
+        kwargs["change_form"] = UserChangeForm(instance=self.request.user)
+        return super().get_context_data(**kwargs)
+
+
+class UserChangeView(UpdateView):
+    model = get_user_model()
+    form_class = UserChangeForm
+    context_object_name = "user_obj"
+
+    def get_success_url(self):
+        return self.request.META.get("HTTP_REFERER")
