@@ -1,5 +1,5 @@
 let xhr = new XMLHttpRequest();
-let educationInput = document.getElementById('education_pk');
+
 // объявлены переменные для кнопки добавления опыта
 const buttonExperience = document.getElementById('btn-add-experience');
 const add_experience = document.getElementById('add_experience');
@@ -23,6 +23,50 @@ function getInputValuesExperience() {
         "finished_at": finishedAtExp,
     }
 }
+// создание карточки для отображения добавленного опыта работы на странице
+function createExperienceCard({id, company_name, position, duties, started_at, finished_at}) {
+    const cardExp = document.createElement('div');
+    cardExp.className = 'card mb-2';
+    cardExp.style.width = '20rem';
+
+    const cardExpBody = document.createElement('div');
+    cardExpBody.className = "card-body";
+    cardExp.append(cardExpBody);
+
+    const pPeriod = document.createElement('p');
+    pPeriod.className = "card-text";
+    pPeriod.innerText = `${started_at} - ${finished_at}`;
+    pPeriod.style.color = 'lightblue';
+    cardExpBody.append(pPeriod);
+
+    const pCompanyName = document.createElement('p');
+    pCompanyName.className = "card-title";
+    pCompanyName.innerText = company_name;
+    cardExpBody.append(pCompanyName);
+
+    const pPosition = document.createElement('p');
+    pPosition.className = "card-text";
+    pPosition.innerText = position;
+    cardExpBody.append(pPosition);
+
+    const pDuties = document.createElement('p');
+    pDuties.className = "card-text";
+    pDuties.innerText = duties;
+    cardExpBody.append(pDuties);
+
+    add_experience.append(cardExp);
+    educationInput.name = id;
+}
+buttonExperience.addEventListener('click', function () {
+    xhr.onload = function () {
+        let data = JSON.parse(this.response);
+        createExperienceCard(data)
+    }
+    let values = getInputValuesExperience();
+    xhr.open('POST', 'http://127.0.0.1:8000/json-experience/');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(values));
+})
 
 // функция для получения значений из ввода при нажатии кнопки buttonEducation
 function getInputValuesEducation() {
@@ -39,40 +83,7 @@ function getInputValuesEducation() {
         "finished_at": finishedAt,
     }
 }
-// создание карточки для отображения добавленного опыта работы на странице
-function createExperienceCard({id, company_name, position, duties, started_at, finished_at}) {
-    const cardExp = document.createElement('div');
-    cardExp.className = 'card mb-2';
-    cardExp.style.width = '20rem';
 
-    const cardExpBody = document.createElement('div');
-    cardExpBody.className = "card-body";
-    cardExp.append(cardExpBody)
-
-    const pPeriod = document.createElement('p');
-    pPeriod.className = "card-text"
-    pPeriod.innerText = `${started_at} - ${finished_at}`
-    pPeriod.style.color = 'lightblue'
-    cardExpBody.append(pPeriod)
-
-    const pCompanyName = document.createElement('p');
-    pCompanyName.className = "card-title"
-    pCompanyName.innerText = company_name
-    cardExpBody.append(pCompanyName)
-
-    const pPosition = document.createElement('p');
-    pPosition.className = "card-text"
-    pPosition.innerText = position
-    cardExpBody.append(pPosition)
-
-    const pDuties = document.createElement('p');
-    pDuties.className = "card-text"
-    pDuties.innerText = duties
-    cardExpBody.append(pDuties)
-
-    add_experience.append(cardExp)
-    educationInput.name = id
-}
 // создание карточки для отображения добавленного образования на странице
 function createEducationCard({place, course, specialization, started_at, finished_at}) {
     const cardEdu = document.createElement('div');
@@ -81,41 +92,31 @@ function createEducationCard({place, course, specialization, started_at, finishe
 
     const cardEduBody = document.createElement('div');
     cardEduBody.className = "card-body";
-    cardEdu.append(cardEduBody)
+    cardEdu.append(cardEduBody);
 
     const pPeriod = document.createElement('p');
-    pPeriod.className = "card-text"
-    pPeriod.innerText = `${started_at} - ${finished_at}`
-    pPeriod.style.color = 'lightblue'
-    cardEduBody.append(pPeriod)
+    pPeriod.className = "card-text";
+    pPeriod.innerText = `${started_at} - ${finished_at}`;
+    pPeriod.style.color = 'lightblue';
+    cardEduBody.append(pPeriod);
 
     const pPlace = document.createElement('p');
-    pPlace.className = "card-title"
-    pPlace.innerText = `Образовательное учреждение: ${place}`
-    cardEduBody.append(pPlace)
+    pPlace.className = "card-title";
+    pPlace.innerText = `Образовательное учреждение: ${place}`;
+    cardEduBody.append(pPlace);
 
     const pCourse = document.createElement('p');
-    pCourse.className = "card-text"
-    pCourse.innerText = `Курс/Факультет: ${course}`
-    cardEduBody.append(pCourse)
+    pCourse.className = "card-text";
+    pCourse.innerText = `Курс/Факультет: ${course}`;
+    cardEduBody.append(pCourse);
 
     const pSpecialization = document.createElement('p');
-    pSpecialization.className = "card-text"
-    pSpecialization.innerText = `Специальность: ${specialization}`
-    cardEduBody.append(pSpecialization)
+    pSpecialization.className = "card-text";
+    pSpecialization.innerText = `Специальность: ${specialization}`;
+    cardEduBody.append(pSpecialization);
 
-    add_education.append(cardEdu)
+    add_education.append(cardEdu);
 }
-buttonExperience.addEventListener('click', function () {
-    xhr.onload = function () {
-        let data = JSON.parse(this.response);
-        createExperienceCard(data)
-    }
-    let values = getInputValuesExperience();
-    xhr.open('POST', 'http://127.0.0.1:8000/json-experience/');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(values));
-})
 
 buttonEducation.addEventListener('click', function () {
     xhr.onload = function () {
@@ -127,3 +128,4 @@ buttonEducation.addEventListener('click', function () {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(values));
 })
+

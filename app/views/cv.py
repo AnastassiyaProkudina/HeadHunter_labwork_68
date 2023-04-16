@@ -1,12 +1,13 @@
 import json
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView
 
 from app.forms import CVCreationMultiForm
-from app.models import Education, Experience
+from app.models import Education, Experience, CV
 
 
 class CVCreateView(LoginRequiredMixin, CreateView):
@@ -49,3 +50,11 @@ def json_experience(request, *args, **kwargs):
             response = JsonResponse(response_data)
             response.status_code = 400
         return response
+
+
+def json_cv_delete(request, id, *args, **kwargs):
+    cv = get_object_or_404(CV, id=id)
+    cv.delete()
+    return JsonResponse({'success': True, 'message': 'Delete', 'id': id})
+
+
