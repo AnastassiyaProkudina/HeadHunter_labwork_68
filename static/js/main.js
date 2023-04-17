@@ -23,11 +23,14 @@ function getInputValuesExperience() {
         "finished_at": finishedAtExp,
     }
 }
+
 // создание карточки для отображения добавленного опыта работы на странице
 function createExperienceCard({id, company_name, position, duties, started_at, finished_at}) {
     const cardExp = document.createElement('div');
     cardExp.className = 'card mb-2';
     cardExp.style.width = '20rem';
+    cardExp.accessKeyLabel = 'data-education';
+    cardExp.accessKey = id
 
     const cardExpBody = document.createElement('div');
     cardExpBody.className = "card-body";
@@ -57,10 +60,12 @@ function createExperienceCard({id, company_name, position, duties, started_at, f
     add_experience.append(cardExp);
     educationInput.name = id;
 }
+
 buttonExperience.addEventListener('click', function () {
     xhr.onload = function () {
         let data = JSON.parse(this.response);
         createExperienceCard(data)
+        listExperience.append(data.id)
     }
     let values = getInputValuesExperience();
     xhr.open('POST', 'http://127.0.0.1:8000/json-experience/');
@@ -89,6 +94,7 @@ function createEducationCard({place, course, specialization, started_at, finishe
     const cardEdu = document.createElement('div');
     cardEdu.className = 'card mb-2';
     cardEdu.style.width = '18rem';
+
 
     const cardEduBody = document.createElement('div');
     cardEduBody.className = "card-body";
@@ -128,4 +134,3 @@ buttonEducation.addEventListener('click', function () {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(values));
 })
-
