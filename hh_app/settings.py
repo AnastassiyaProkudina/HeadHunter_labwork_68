@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "debug_toolbar",
     "django_bootstrap5",
     "accounts",
     "app",
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -54,10 +56,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "hh_app.urls"
 
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -80,7 +83,7 @@ WSGI_APPLICATION = "hh_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "hh_new",
+        "NAME": "hh_new_test",
         "USER": "anakess",
         "PASSWORD": "Aa123@",
         "HOST": "localhost",
@@ -129,12 +132,20 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads/")
 MEDIA_URL = "/uploads/"
 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
+
 AUTH_USER_MODEL = "accounts.Account"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 BOOTSTRAP5 = {
     # The complete URL to the Bootstrap CSS file.

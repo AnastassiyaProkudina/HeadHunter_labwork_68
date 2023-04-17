@@ -66,13 +66,13 @@ class CustomUserCreationForm(forms.ModelForm):
         user.set_password(self.cleaned_data.get("password"))
         employer = self.cleaned_data.get("is_employer")
         group_employer = Group.objects.get(pk=2)
-        group_seeker = Group.objects.get(pk=1)
+        group_applicant = Group.objects.get(pk=1)
         if commit:
             user.save()
             if employer == True:
                 user.groups.add(group_employer)
             else:
-                user.groups.add(group_seeker)
+                user.groups.add(group_applicant)
         return user
 
     class UserChangeForm(forms.ModelForm):

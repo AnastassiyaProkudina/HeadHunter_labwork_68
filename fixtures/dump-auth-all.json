@@ -1,17 +1,17 @@
 [
 {
   "model": "accounts.account",
-  "pk": 2,
+  "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$600000$fH5yfMIn3cBevSJOeTrQrN$baXl51CbdnWGBOzpulpvRwDIT9bjDNRNnjfk86Nbqzk=",
-    "last_login": "2023-04-17T13:40:34Z",
+    "password": "pbkdf2_sha256$600000$XbKnigSHKiatTRu7HGetko$XivaxbWZheytF2OfQ0n1+yBnajN+3LWawPk62UsA0YQ=",
+    "last_login": "2023-04-17T15:29:42.453Z",
     "is_superuser": true,
     "username": "admin@admin.com",
     "first_name": "",
     "last_name": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2023-04-13T07:05:48Z",
+    "date_joined": "2023-04-17T15:29:08.967Z",
     "email": "admin@admin.com",
     "phone": "",
     "avatar": "user_pic/default_user_pic.jpeg",
@@ -23,372 +23,26 @@
 },
 {
   "model": "accounts.account",
-  "pk": 3,
+  "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$600000$KwAOwjpUifu2phSIzBgAkf$9UGq2msgF0i6u4q463eutKCJXK8BdwoJNme8bgS04RU=",
-    "last_login": "2023-04-13T07:18:16.438Z",
-    "is_superuser": false,
-    "username": "arman",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-04-13T07:18:15.782Z",
-    "email": "arman@ar.com",
-    "phone": "555555",
-    "avatar": "user_pic/default_user_pic.jpeg",
-    "bio": "",
-    "is_employer": false,
-    "groups": [
-      1
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "accounts.account",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$7sH2H4W8N3woBHIIdoKN3i$LHYsqgK86WghVeFkr+eToliYc7f6Qq+tzxPoZ3xw4yE=",
-    "last_login": "2023-04-13T07:19:22.464Z",
-    "is_superuser": false,
-    "username": "ali",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-04-13T07:19:22.006Z",
-    "email": "ali@ali.com",
-    "phone": "777777",
-    "avatar": "user_pic/default_user_pic.jpeg",
-    "bio": "",
-    "is_employer": false,
-    "groups": [
-      1
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "accounts.account",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$sqxolJfpT55hxcKLqmzAAJ$e58luUGnbdp5JlityKEi1lXLObMzIuMvCM5gijGffo0=",
-    "last_login": "2023-04-13T07:21:07.292Z",
-    "is_superuser": false,
-    "username": "GGG",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-04-13T07:21:06.793Z",
-    "email": "alialikhan0520@gmail.com",
-    "phone": "222222",
-    "avatar": "user_pic/default_user_pic.jpeg",
-    "bio": "",
-    "is_employer": true,
-    "groups": [
-      2
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "accounts.account",
-  "pk": 6,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$ScwyHJCotFFpvLSjXJ4Ff2$WpOk4lf/Lruu/UeLjqzOQ4o/ptRx865JWH/V6Fbz234=",
-    "last_login": "2023-04-17T13:40:17.936Z",
+    "password": "pbkdf2_sha256$600000$hGZdkxwbXDQDpLMERBnk6b$QuGbYkDfuDA9TKxCMwx35KaO/AXGhiWdKw8/uRP+/SI=",
+    "last_login": "2023-04-17T15:49:07.982Z",
     "is_superuser": false,
     "username": "John",
     "first_name": "",
-    "last_name": "Doe",
+    "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2023-04-16T05:28:35.822Z",
+    "date_joined": "2023-04-17T15:49:07.743Z",
     "email": "john_doe@mail.com",
-    "phone": "7054970436347",
-    "avatar": "user_pic/john_doe.jpeg",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt dolores hic, iure minima non rem sint tenetur vero voluptate.",
+    "phone": "7054970436346",
+    "avatar": "user_pic/default_user_pic.jpeg",
+    "bio": "mlkmhp'srmh'pomlk njnljogeg;ikaemd",
     "is_employer": false,
     "groups": [
       1
     ],
     "user_permissions": []
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 1,
-  "fields": {
-    "telegram": "kess",
-    "email": "kess@mail.ru",
-    "phone": "79875647",
-    "facebook": "kess",
-    "linkedin": "kess"
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 2,
-  "fields": {
-    "telegram": "",
-    "email": "admin@admin.com",
-    "phone": "5780980985",
-    "facebook": "",
-    "linkedin": ""
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 3,
-  "fields": {
-    "telegram": "kess",
-    "email": "kess@mail.ru",
-    "phone": "5780980985",
-    "facebook": "",
-    "linkedin": ""
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 4,
-  "fields": {
-    "telegram": "doedoe",
-    "email": "johndoe@mail.com",
-    "phone": "5780980985",
-    "facebook": "kess",
-    "linkedin": ""
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 5,
-  "fields": {
-    "telegram": "doedoe",
-    "email": "johndoe@mail.com",
-    "phone": "5780980985",
-    "facebook": "doedoe",
-    "linkedin": "doedoe"
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 6,
-  "fields": {
-    "telegram": "doedoe",
-    "email": "johndoe@mail.com",
-    "phone": "5780980985",
-    "facebook": "doedoe",
-    "linkedin": "doedoe"
-  }
-},
-{
-  "model": "app.contacts",
-  "pk": 7,
-  "fields": {
-    "telegram": "",
-    "email": "kess@mail.ru",
-    "phone": "5780980985",
-    "facebook": "",
-    "linkedin": ""
-  }
-},
-{
-  "model": "app.cv",
-  "pk": 2,
-  "fields": {
-    "author": 2,
-    "first_name": "Admin",
-    "last_name": "Adminov",
-    "job_category": "management",
-    "position": "Администратор",
-    "salary": 1000000,
-    "education_level": "master",
-    "created_at": "2023-04-16T07:56:42.326Z",
-    "updated_at": "2023-04-16T07:56:42.326Z",
-    "contacts": 2,
-    "education": [],
-    "experience": []
-  }
-},
-{
-  "model": "app.cv",
-  "pk": 6,
-  "fields": {
-    "author": 6,
-    "first_name": "John",
-    "last_name": "Doe",
-    "job_category": "finance",
-    "position": "Python Developer",
-    "salary": 60000,
-    "education_level": "secondary specialized",
-    "created_at": "2023-04-16T14:44:52.339Z",
-    "updated_at": "2023-04-16T15:42:46.306Z",
-    "contacts": 6,
-    "education": [],
-    "experience": []
-  }
-},
-{
-  "model": "app.cv",
-  "pk": 7,
-  "fields": {
-    "author": 6,
-    "first_name": "Анастасия",
-    "last_name": "Кесс",
-    "job_category": "finance",
-    "position": "Администратор",
-    "salary": 6665656,
-    "education_level": "bachelor",
-    "created_at": "2023-04-16T18:32:24.743Z",
-    "updated_at": "2023-04-16T18:32:24.743Z",
-    "contacts": 7,
-    "education": [],
-    "experience": []
-  }
-},
-{
-  "model": "app.experience",
-  "pk": 1,
-  "fields": {
-    "company_name": "ИП Elite Wood",
-    "position": "директор",
-    "duties": "щзопжщфушопэзщуыопрэщзыук",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.experience",
-  "pk": 2,
-  "fields": {
-    "company_name": "ИП Elite Wood",
-    "position": "директор",
-    "duties": "щзопжщфушопэзщуыопрэщзыук",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.experience",
-  "pk": 3,
-  "fields": {
-    "company_name": "ИП Elite Wood",
-    "position": "директор",
-    "duties": "щзопжщфушопэзщуыопрэщзыук",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.education",
-  "pk": 1,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2022,
-    "finished_at": 2023
-  }
-},
-{
-  "model": "app.education",
-  "pk": 2,
-  "fields": {
-    "place": "Attractor",
-    "course": "#C",
-    "specialization": "#C Developer",
-    "started_at": 2020,
-    "finished_at": 2021
-  }
-},
-{
-  "model": "app.education",
-  "pk": 3,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.education",
-  "pk": 4,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2020,
-    "finished_at": 2022
-  }
-},
-{
-  "model": "app.education",
-  "pk": 5,
-  "fields": {
-    "place": "Университет",
-    "course": "Маркетинг и Менеджмент",
-    "specialization": "Маркетолог",
-    "started_at": 2012,
-    "finished_at": 2013
-  }
-},
-{
-  "model": "app.education",
-  "pk": 6,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2012,
-    "finished_at": 2013
-  }
-},
-{
-  "model": "app.education",
-  "pk": 7,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2012,
-    "finished_at": 2013
-  }
-},
-{
-  "model": "app.education",
-  "pk": 8,
-  "fields": {
-    "place": "Ahiulhluih",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2012,
-    "finished_at": 2013
-  }
-},
-{
-  "model": "app.education",
-  "pk": 9,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2012,
-    "finished_at": 2013
-  }
-},
-{
-  "model": "app.education",
-  "pk": 10,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "nu",
-    "started_at": 2012,
-    "finished_at": 2013
   }
 },
 {
@@ -611,243 +265,159 @@
   "model": "auth.permission",
   "pk": 25,
   "fields": {
-    "name": "Can add vacancy",
+    "name": "Can add contacts",
     "content_type": 7,
-    "codename": "add_vacancy"
+    "codename": "add_contacts"
   }
 },
 {
   "model": "auth.permission",
   "pk": 26,
   "fields": {
-    "name": "Can change vacancy",
+    "name": "Can change contacts",
     "content_type": 7,
-    "codename": "change_vacancy"
+    "codename": "change_contacts"
   }
 },
 {
   "model": "auth.permission",
   "pk": 27,
   "fields": {
-    "name": "Can delete vacancy",
+    "name": "Can delete contacts",
     "content_type": 7,
-    "codename": "delete_vacancy"
+    "codename": "delete_contacts"
   }
 },
 {
   "model": "auth.permission",
   "pk": 28,
   "fields": {
-    "name": "Can view vacancy",
+    "name": "Can view contacts",
     "content_type": 7,
-    "codename": "view_vacancy"
+    "codename": "view_contacts"
   }
 },
 {
   "model": "auth.permission",
   "pk": 29,
   "fields": {
-    "name": "Can add vacancy",
+    "name": "Can add cv",
     "content_type": 8,
-    "codename": "add_vacancy"
+    "codename": "add_cv"
   }
 },
 {
   "model": "auth.permission",
   "pk": 30,
   "fields": {
-    "name": "Can change vacancy",
+    "name": "Can change cv",
     "content_type": 8,
-    "codename": "change_vacancy"
+    "codename": "change_cv"
   }
 },
 {
   "model": "auth.permission",
   "pk": 31,
   "fields": {
-    "name": "Can delete vacancy",
+    "name": "Can delete cv",
     "content_type": 8,
-    "codename": "delete_vacancy"
+    "codename": "delete_cv"
   }
 },
 {
   "model": "auth.permission",
   "pk": 32,
   "fields": {
-    "name": "Can view vacancy",
+    "name": "Can view cv",
     "content_type": 8,
-    "codename": "view_vacancy"
+    "codename": "view_cv"
   }
 },
 {
   "model": "auth.permission",
   "pk": 33,
   "fields": {
-    "name": "Can add experience",
+    "name": "Can add education",
     "content_type": 9,
-    "codename": "add_experience"
+    "codename": "add_education"
   }
 },
 {
   "model": "auth.permission",
   "pk": 34,
   "fields": {
-    "name": "Can change experience",
+    "name": "Can change education",
     "content_type": 9,
-    "codename": "change_experience"
+    "codename": "change_education"
   }
 },
 {
   "model": "auth.permission",
   "pk": 35,
   "fields": {
-    "name": "Can delete experience",
+    "name": "Can delete education",
     "content_type": 9,
-    "codename": "delete_experience"
+    "codename": "delete_education"
   }
 },
 {
   "model": "auth.permission",
   "pk": 36,
   "fields": {
-    "name": "Can view experience",
+    "name": "Can view education",
     "content_type": 9,
-    "codename": "view_experience"
+    "codename": "view_education"
   }
 },
 {
   "model": "auth.permission",
   "pk": 37,
   "fields": {
-    "name": "Can add education",
+    "name": "Can add experience",
     "content_type": 10,
-    "codename": "add_education"
+    "codename": "add_experience"
   }
 },
 {
   "model": "auth.permission",
   "pk": 38,
   "fields": {
-    "name": "Can change education",
+    "name": "Can change experience",
     "content_type": 10,
-    "codename": "change_education"
+    "codename": "change_experience"
   }
 },
 {
   "model": "auth.permission",
   "pk": 39,
   "fields": {
-    "name": "Can delete education",
+    "name": "Can delete experience",
     "content_type": 10,
-    "codename": "delete_education"
+    "codename": "delete_experience"
   }
 },
 {
   "model": "auth.permission",
   "pk": 40,
   "fields": {
-    "name": "Can view education",
+    "name": "Can view experience",
     "content_type": 10,
-    "codename": "view_education"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 41,
-  "fields": {
-    "name": "Can add cv",
-    "content_type": 11,
-    "codename": "add_cv"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 42,
-  "fields": {
-    "name": "Can change cv",
-    "content_type": 11,
-    "codename": "change_cv"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 43,
-  "fields": {
-    "name": "Can delete cv",
-    "content_type": 11,
-    "codename": "delete_cv"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 44,
-  "fields": {
-    "name": "Can view cv",
-    "content_type": 11,
-    "codename": "view_cv"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 45,
-  "fields": {
-    "name": "Can add contacts",
-    "content_type": 12,
-    "codename": "add_contacts"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 46,
-  "fields": {
-    "name": "Can change contacts",
-    "content_type": 12,
-    "codename": "change_contacts"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 47,
-  "fields": {
-    "name": "Can delete contacts",
-    "content_type": 12,
-    "codename": "delete_contacts"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 48,
-  "fields": {
-    "name": "Can view contacts",
-    "content_type": 12,
-    "codename": "view_contacts"
+    "codename": "view_experience"
   }
 },
 {
   "model": "auth.group",
   "pk": 1,
   "fields": {
-    "name": "applicant",
+    "name": "employer",
     "permissions": [
       21,
       22,
       24,
-      45,
-      46,
-      47,
-      48,
-      41,
-      42,
-      43,
-      44,
-      37,
-      38,
-      39,
-      40,
-      33,
-      34,
-      35,
-      36,
+      25,
+      26,
+      27,
+      28,
       32
     ]
   }
@@ -856,26 +426,27 @@
   "model": "auth.group",
   "pk": 2,
   "fields": {
-    "name": "employer",
+    "name": "applicant",
     "permissions": [
       21,
       22,
       24,
-      45,
-      46,
-      47,
-      48,
-      44,
-      40,
-      36,
+      25,
+      26,
+      27,
+      28,
       29,
       30,
       31,
       32,
-      25,
-      26,
-      27,
-      28
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
     ]
   }
 }
