@@ -38,7 +38,7 @@ def json_cv_delete(request, id, *args, **kwargs):
     return JsonResponse({'success': True, 'message': 'Delete', 'id': id})
 
 
-class CVChangeView(UpdateView):
+class CVChangeView(LoginRequiredMixin, UpdateView):
     model = CV
     form_class = CVCreationMultiForm
     template_name = "create_cv.html"

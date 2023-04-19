@@ -166,3 +166,8 @@ buttonEducation.addEventListener('click', function () {
 
     xhr.send(JSON.stringify(values));
 })
+
+
+// объявлены переменные для кнопки добавления резюме
+const buttonUpdateCV = document.getElementById('btn-add-education');
+const add_Update = document.getElementById('add_education');

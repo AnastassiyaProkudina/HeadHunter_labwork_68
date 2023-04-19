@@ -4,7 +4,7 @@
         {% if header == 'cvs' %}
             <div class="row g-o">
                 <div class="col-sm-7">
-                    <p class="card-text">{{ cv.position }}</p>
+                    <p class="card-text" data-cvUpdatedAt>{{ cv.updated_at }}</p>
                 </div>
                 <div class="col-sm-1 mx-1" data-bs-toggle="modal"
                      data-bs-target="#CVDetailModal{{ cv.id }}">
@@ -35,7 +35,7 @@
         {% endif %}
     </div>
     <div class="card-body">
-        <div class="card-text">{{ cv.updated_at }}</div>
+        <div class="card-text">{{ cv.position }}</div>
     </div>
 </div>
 

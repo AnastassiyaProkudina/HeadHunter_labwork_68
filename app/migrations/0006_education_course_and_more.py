@@ -13,16 +13,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name="education",
-            name="month",
-            field=month.models.MonthField(
-                blank=True,
-                help_text="some help...",
-                null=True,
-                verbose_name="Month Value",
-            ),
-        ),
         migrations.AlterField(
             model_name="education",
             name="course",

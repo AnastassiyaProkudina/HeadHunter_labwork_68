@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("app", "0008_alter_contacts_email"),
+        ("app", "0007_alter_contacts_email"),
     ]
 
     operations = [
