@@ -15,7 +15,7 @@
                 <p>Категория: {{ form.cv.job_category }}</p>
                 <p>Зарплата*: {{ form.cv.salary }}</p>
             </div>
-            <div class="block my-3">
+            <div class="block my-3 education-block">
                 <h4>Образование</h4>
                 <p>Уровень образования: {{ form.cv.education_level }}</p><input type="hidden" name="{{ education.pk }}"
                                                                                 id="education.pk">
@@ -45,4 +45,26 @@
         </form>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript">
+
+            $(document).ready(function () {
+                const id = $(this).data("education");
+                $("body").on("click", ".card-education-{{ id }}", function (e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: "http://127.0.0.1:8000/json-education-delete/" + id,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        data: {
+                            id: id
+                        },
+                        success: function (response) {
+                            $(".education-block .education-card-" + id).remove();
+                        }
+                    });
+                    return false;
+                });
+            });
+        </script>
 {% endblock %}

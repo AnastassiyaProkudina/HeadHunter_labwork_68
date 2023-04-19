@@ -27,6 +27,11 @@ class ContactsForm(forms.ModelForm):
         model = Contacts
         fields = ["telegram", "email", "phone", "facebook", "linkedin"]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["phone"].widget.attrs.update({"required": True})
+
+
 
 class CVCreationMultiForm(MultiModelForm):
     form_classes = {

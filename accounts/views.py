@@ -7,6 +7,7 @@ from django.views.generic import TemplateView, CreateView, DetailView, UpdateVie
 from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm
 from app.forms import CVCreationMultiForm
 from app.models import CV
+from app.models.cv import EducationLevelChoice
 
 
 class LoginView(TemplateView):
@@ -65,6 +66,7 @@ class AccountView(LoginRequiredMixin, DetailView):
         kwargs["cvs"] = CV.objects.filter(author_id=self.request.user.pk).order_by('-created_at')
         kwargs["change_form"] = UserChangeForm(instance=self.request.user)
         kwargs["change_cv_form"] = CVCreationMultiForm()
+        kwargs["education_level_choices"] = EducationLevelChoice.choices
         return super().get_context_data(**kwargs)
 
 

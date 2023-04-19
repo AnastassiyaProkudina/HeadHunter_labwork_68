@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Резюме</h4>
+                <h4 class="modal-title table-cv-title">Резюме</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="card mb-3" style="border: none">
@@ -12,34 +12,46 @@
                     <tbody>
                     <tr>
                         <th scope="row"><p class="table-row">Имя</p></th>
-                        <th scope="row"><p>{{ cv.first_name }}</p></th>
+                        <td><p class="table-row">{{ cv.first_name }}</p></td>
                     </tr>
                     <tr>
                         <th scope="row"><p class="table-row">Фамилия</p></th>
-                        <th scope="row"><p class="table-row">{{ cv.last_name }}</p></th>
+                        <td><p class="table-row">{{ cv.last_name }}</p></td>
                     </tr>
                     <tr>
-                        <th scope="row"><p class="table-row">Категория вакансии</p></th>
-                        <th scope="row"><p class="table-row">{{ cv.job_category }}</p></th>
+                        <th scope="row"><p class="table-row">Желаемая позиция</p></th>
+                        <td><p class="table-row">{{ cv.position }}</p></td>
                     </tr>
                     <tr>
-                        <th scope="row"><p class="table-row">Желаемая должность</p></th>
-                        <th scope="row"><p class="table-row">{{ cv.position }}</p></th>
-                    </tr>
-                    <tr>
-                        <th scope="row"><p class="table-row">Оклад</th>
-                        <th scope="row"><p class="table-row">{{ cv.salary }}</p></th>
+                        <th scope="row"><p class="table-row">Оклад</p></th>
+                        <td><p class="table-row">{{ cv.salary }}</p></td>
                     </tr>
                     <tr>
                         <th scope="row"><p class="table-row">Уровень образования</p></th>
-                        <th scope="row"><p class="table-row">{{ cv.education_level }}</p></th>
+                        {% for choice in education_level_choices %}
+                            {% if choice.0 == cv.education_level %}
+                                <td><p class="table-row">{{ choice.1 }}</p></td>
+                            {% endif %}
+                        {% endfor %}
                     </tr>
                     <tr>
                         <th scope="row"><p class="table-row">Образование</p></th>
-                        {% for edu in cv.education.all %}
-                            <th scope="row"><p class="table-row">{{ edu }}</p></th>
-                        {% endfor %}
                     </tr>
+                    {% for edu in cv.education.all %}
+                        <tr>
+                            <td><p class="table-row">{{ edu.started_at }} - {{ edu.finished_at }} {{ edu.place }}({{ edu.course }})</p></td>
+                            <td><p class="table-row">{{ edu.specialization }}</p></td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th scope="row"><p class="table-row">Опыт работы</p></th>
+                    </tr>
+                    {% for exp in cv.experience.all %}
+                        <tr>
+                            <td><p class="table-row">{{ exp.started_at }} - {{ exp.finished_at }} {{ exp.company_name }}({{ exp.position }})</p></td>
+                            <td><p class="table-row">{{ exp.duties }}</p></td>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

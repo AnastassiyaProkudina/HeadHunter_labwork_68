@@ -98,7 +98,7 @@ function getInputValuesEducation() {
 }
 
 // создание карточки для отображения добавленного образования на странице
-function createEducationCard({id, place, course, specialization, started_at, finished_at}) {
+function createEducationCard({id, place, course, specialization, started_at, finished_at, cv_id}) {
     const cardEdu = document.createElement('div');
     cardEdu.className = `card mb-2 education-card-${id}`;
     cardEdu.style.width = '18rem';
@@ -109,21 +109,21 @@ function createEducationCard({id, place, course, specialization, started_at, fin
     cardEdu.append(cardHeader);
 
     const cardCloseButton = document.createElement('button');
-    cardCloseButton.className = 'btn-close';
+    cardCloseButton.className = `btn-close btn-education-close-${cv_id}`;
     cardCloseButton.id = `btn-education-${id}`
     cardHeader.append(cardCloseButton);
-    cardCloseButton.addEventListener('click', function () {
-        let req = new XMLHttpRequest();
-        req.onload = function () {
-            if (this.status === 200) {
-                cardEdu.style.display = "none";
-            }
-        }
-        req.open('DELETE', `http://127.0.0.1:8000/json-education-delete/${id}`);
-        req.setRequestHeader('Content-Type', 'application/json');
-        req.send(JSON.stringify({"pk": education}));
-
-    })
+    // cardCloseButton.addEventListener('click', function () {
+    //     let req = new XMLHttpRequest();
+    //     req.onload = function () {
+    //         if (this.status === 200) {
+    //             cardEdu.style.display = "none";
+    //         }
+    //     }
+    //     req.open('DELETE', `http://127.0.0.1:8000/json-education-delete/${id}`);
+    //     req.setRequestHeader('Content-Type', 'application/json');
+    //     req.send(JSON.stringify({"pk": education}));
+    //
+    // })
 
     const cardEduBody = document.createElement('div');
     cardEduBody.className = "card-body";
