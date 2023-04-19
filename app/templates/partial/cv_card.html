@@ -15,19 +15,20 @@
                 </div>
                 {% include 'partial/cv_modal_detail.html' %}
                 <div class="col-sm-1 mx-1">
-                    <button type="button"  style="border: none; background-color:inherit;" data-bs-toggle="modal"
+                    <button type="button" style="border: none; background-color:inherit;" data-bs-toggle="modal"
                             data-bs-target="#CVChangeModal{{ cv.id }}">
-                            <iconify-icon icon="material-symbols:folder-managed-outline-sharp" style="color: #0B0C10;"
+                        <iconify-icon icon="material-symbols:folder-managed-outline-sharp" style="color: #0B0C10;"
                                       width="30"></iconify-icon>
                     </button>
                 </div>
                 {% include 'partial/cv_modal_change.html' %}
                 <div class="col-sm-1 mx-1">
                     {% csrf_token %}
-                    <button type="button" data-id={{ cv.id }} class="button-in-cv-card delete-cv"
-                            style="border: none; background-color:inherit;">
-                        <iconify-icon icon="material-symbols:folder-delete-outline-sharp" style="color: #0B0C10;"
-                                      width="30"></iconify-icon>
+                    <button type="button" data-id={{ cv.id }} class="button-in-cv-card delete-cv
+                    "
+                    style="border: none; background-color:inherit;">
+                    <iconify-icon icon="material-symbols:folder-delete-outline-sharp" style="color: #0B0C10;"
+                                  width="30"></iconify-icon>
                     </button>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 {% load static %}
 {% load django_bootstrap5 %}
 <div class="modal modal-lg fade" id="ExperienceModal" tabindex="-1"
-     aria-labelledby="CommentModalLabel{{ post.id }}"
+     aria-labelledby="CommentModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -16,6 +16,7 @@
                     <input type="text" id="company_name" class="form-control" placeholder="Организация"/><br>
                     <input type="text" id="position" class="form-control" placeholder="Должность"/><br>
                     <input type="text" id="duties" class="form-control" placeholder="Обязанности на рабочем месте"/><br>
+                    <input type="hidden" id="cv_experience" data-cv={{ cv.id }}/><br>
                     <input type="button" id="btn-add-experience" data-bs-dismiss="modal" value="Отправить"/>
                 </div>
             </div>

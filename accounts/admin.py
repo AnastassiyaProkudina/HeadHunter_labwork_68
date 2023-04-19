@@ -9,5 +9,3 @@ admin.site.register(CV)
 admin.site.register(Contacts)
 admin.site.register(Experience)
 admin.site.register(Education)
-
-

@@ -6,6 +6,7 @@ from django.views.generic import TemplateView, CreateView, DetailView, UpdateVie
 
 from accounts.forms import LoginForm, CustomUserCreationForm, UserChangeForm
 from app.forms import CVCreationMultiForm
+from app.models import CV
 
 
 class LoginView(TemplateView):
@@ -61,12 +62,13 @@ class AccountView(LoginRequiredMixin, DetailView):
     context_object_name = "user_obj"
 
     def get_context_data(self, **kwargs):
+        kwargs["cvs"] = CV.objects.filter(author_id=self.request.user.pk).order_by('-created_at')
         kwargs["change_form"] = UserChangeForm(instance=self.request.user)
         kwargs["change_cv_form"] = CVCreationMultiForm()
         return super().get_context_data(**kwargs)
 
 
-class UserChangeView(UpdateView):
+class UserUpdateView(UpdateView):
     model = get_user_model()
     form_class = UserChangeForm
     context_object_name = "user_obj"

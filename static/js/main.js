@@ -1,5 +1,3 @@
-let xhr = new XMLHttpRequest();
-
 // объявлены переменные для кнопки добавления опыта
 const buttonExperience = document.getElementById('btn-add-experience');
 const add_experience = document.getElementById('add_experience');
@@ -15,12 +13,15 @@ function getInputValuesExperience() {
     let duties = document.getElementById('duties').value;
     let startedAtExp = document.getElementById('started_at_').value;
     let finishedAtExp = document.getElementById('finished_at_').value;
+    const cvID = document.querySelector("#cv_experience");
+    let cv_id = parseInt(cvID.dataset.cv)
     return {
         "company_name": companyName,
         "position": position,
         "duties": duties,
         "started_at": startedAtExp,
         "finished_at": finishedAtExp,
+        "cv_id": cv_id,
     }
 }
 
@@ -58,19 +59,22 @@ function createExperienceCard({id, company_name, position, duties, started_at, f
     cardExpBody.append(pDuties);
 
     add_experience.append(cardExp);
+    let educationInput;
     educationInput.name = id;
 }
 
 buttonExperience.addEventListener('click', function () {
-    xhr.onload = function () {
+    let request = new XMLHttpRequest();
+    request.onload = function () {
         let data = JSON.parse(this.response);
-        createExperienceCard(data)
-        listExperience.append(data.id)
+        createExperienceCard(data);
+        let listExperience;
+        listExperience.append(data.id);
     }
     let values = getInputValuesExperience();
-    xhr.open('POST', 'http://127.0.0.1:8000/json-experience/');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(values));
+    request.open('POST', 'http://127.0.0.1:8000/json-experience/');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify(values));
 })
 
 // функция для получения значений из ввода при нажатии кнопки buttonEducation
@@ -80,21 +84,46 @@ function getInputValuesEducation() {
     let specialization = document.getElementById('specialization').value;
     let startedAt = document.getElementById('started_at').value;
     let finishedAt = document.getElementById('finished_at').value;
+    const cvID = document.querySelector("#cv_education");
+    let cv_id = parseInt(cvID.dataset.cv)
+
     return {
         "place": place,
         "course": course,
         "specialization": specialization,
         "started_at": startedAt,
         "finished_at": finishedAt,
+        "cv_id": cv_id,
     }
 }
 
 // создание карточки для отображения добавленного образования на странице
-function createEducationCard({place, course, specialization, started_at, finished_at}) {
+function createEducationCard({id, place, course, specialization, started_at, finished_at}) {
     const cardEdu = document.createElement('div');
-    cardEdu.className = 'card mb-2';
+    cardEdu.className = `card mb-2 education-card-${id}`;
     cardEdu.style.width = '18rem';
+    cardEdu.dataset.education = id
 
+    const cardHeader = document.createElement('div');
+    cardHeader.className = 'card-header';
+    cardEdu.append(cardHeader);
+
+    const cardCloseButton = document.createElement('button');
+    cardCloseButton.className = 'btn-close';
+    cardCloseButton.id = `btn-education-${id}`
+    cardHeader.append(cardCloseButton);
+    cardCloseButton.addEventListener('click', function () {
+        let req = new XMLHttpRequest();
+        req.onload = function () {
+            if (this.status === 200) {
+                cardEdu.style.display = "none";
+            }
+        }
+        req.open('DELETE', `http://127.0.0.1:8000/json-education-delete/${id}`);
+        req.setRequestHeader('Content-Type', 'application/json');
+        req.send(JSON.stringify({"pk": education}));
+
+    })
 
     const cardEduBody = document.createElement('div');
     cardEduBody.className = "card-body";
@@ -125,12 +154,15 @@ function createEducationCard({place, course, specialization, started_at, finishe
 }
 
 buttonEducation.addEventListener('click', function () {
+    let xhr = new XMLHttpRequest();
     xhr.onload = function () {
+
         let data = JSON.parse(this.response);
         createEducationCard(data)
     }
     let values = getInputValuesEducation();
-    xhr.open('POST', 'http://127.0.0.1:8000/json-education/');
+    xhr.open('POST', `http://127.0.0.1:8000/json-education/`);
     xhr.setRequestHeader('Content-Type', 'application/json');
+
     xhr.send(JSON.stringify(values));
 })

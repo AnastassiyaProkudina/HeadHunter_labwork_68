@@ -1,115 +1,195 @@
 [
-{
-  "model": "app.contacts",
-  "pk": 1,
-  "fields": {
-    "telegram": "kess",
-    "email": "kess@mail.ru",
-    "phone": "79875647",
-    "facebook": "kess",
-    "linkedin": "kess"
+  {
+    "model": "app.contacts",
+    "pk": 1,
+    "fields": {
+      "telegram": "",
+      "email": "johndoe@mail.com",
+      "phone": "879889788",
+      "facebook": "ygk",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 2,
+    "fields": {
+      "telegram": "doedoe",
+      "email": "johndoe@mail.com",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 3,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 4,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "6779876786",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 5,
+    "fields": {
+      "telegram": "",
+      "email": "admin@admin.com",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 6,
+    "fields": {
+      "telegram": "",
+      "email": "johndoe@mail.com",
+      "phone": "897868576576",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 7,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 8,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 9,
+    "fields": {
+      "telegram": "",
+      "email": "johndoe@mail.com",
+      "phone": "5780980985",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 10,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 11,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 12,
+    "fields": {
+      "telegram": "",
+      "email": "kess@mail.ru",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 13,
+    "fields": {
+      "telegram": "",
+      "email": "admin@admin.com",
+      "phone": "77777777",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 14,
+    "fields": {
+      "telegram": "",
+      "email": "johndoe@mail.com",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.contacts",
+    "pk": 15,
+    "fields": {
+      "telegram": "",
+      "email": "admin@admin.com",
+      "phone": "",
+      "facebook": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "model": "app.cv",
+    "pk": 20,
+    "fields": {
+      "author": 1,
+      "first_name": "Admin",
+      "last_name": "Adminov",
+      "job_category": "other",
+      "position": "Администратор",
+      "salary": 600000,
+      "education_level": "bachelor",
+      "created_at": "2023-04-19T06:32:37.521Z",
+      "updated_at": "2023-04-19T06:33:17.089Z",
+      "contacts": 15
+    }
+  },
+  {
+    "model": "app.education",
+    "pk": 31,
+    "fields": {
+      "place": "Attractor",
+      "course": "Python",
+      "specialization": "Python Developer",
+      "started_at": 2012,
+      "finished_at": 2013,
+      "cv": 20
+    }
   }
-},
-{
-  "model": "app.contacts",
-  "pk": 2,
-  "fields": {
-    "telegram": "",
-    "email": "admin@admin.com",
-    "phone": "5780980985",
-    "facebook": "",
-    "linkedin": ""
-  }
-},
-{
-  "model": "app.cv",
-  "pk": 1,
-  "fields": {
-    "author": 6,
-    "first_name": "Анастасия",
-    "last_name": "Кесс",
-    "job_category": "IT",
-    "position": "Python Developer",
-    "salary": 500000,
-    "education_level": "bachelor",
-    "created_at": "2023-04-16T07:27:36.414Z",
-    "updated_at": "2023-04-16T07:27:36.414Z",
-    "contacts": 1,
-    "education": [],
-    "experience": []
-  }
-},
-{
-  "model": "app.cv",
-  "pk": 2,
-  "fields": {
-    "author": 2,
-    "first_name": "Admin",
-    "last_name": "Adminov",
-    "job_category": "management",
-    "position": "Администратор",
-    "salary": 1000000,
-    "education_level": "master",
-    "created_at": "2023-04-16T07:56:42.326Z",
-    "updated_at": "2023-04-16T07:56:42.326Z",
-    "contacts": 2,
-    "education": [],
-    "experience": []
-  }
-},
-{
-  "model": "app.experience",
-  "pk": 1,
-  "fields": {
-    "company_name": "ИП Elite Wood",
-    "position": "директор",
-    "duties": "щзопжщфушопэзщуыопрэщзыук",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.education",
-  "pk": 1,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2022,
-    "finished_at": 2023
-  }
-},
-{
-  "model": "app.education",
-  "pk": 2,
-  "fields": {
-    "place": "Attractor",
-    "course": "#C",
-    "specialization": "#C Developer",
-    "started_at": 2020,
-    "finished_at": 2021
-  }
-},
-{
-  "model": "app.education",
-  "pk": 3,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2013,
-    "finished_at": 2014
-  }
-},
-{
-  "model": "app.education",
-  "pk": 4,
-  "fields": {
-    "place": "Attractor",
-    "course": "Python",
-    "specialization": "Python Developer",
-    "started_at": 2020,
-    "finished_at": 2022
-  }
-}
 ]

@@ -7,18 +7,19 @@
             {% csrf_token %}
             <div class="block mb-3">
                 <h4>Контактные данные</h4>
-                <p>Имя: {{ form.cv.first_name }}</p>
-                <p>Фамилия: {{ form.cv.last_name }}</p>
+                <p>Имя*: {{ form.cv.first_name }}</p>
+                <p>Фамилия*: {{ form.cv.last_name }}</p>
                 {{ form.contacts.as_p }}
                 <h4>Специальность</h4>
-                <p>Желаемая должность: {{ form.cv.position }}</p>
+                <p>Желаемая должность*: {{ form.cv.position }}</p>
                 <p>Категория: {{ form.cv.job_category }}</p>
-                <p>Зарплата: {{ form.cv.salary }}</p>
+                <p>Зарплата*: {{ form.cv.salary }}</p>
             </div>
             <div class="block my-3">
                 <h4>Образование</h4>
-                <p>Уровень образования: {{ form.cv.education_level }}</p><input type="hidden" name="{{ education.pk }}" id="education.pk">
-                <div id="add_education">
+                <p>Уровень образования: {{ form.cv.education_level }}</p><input type="hidden" name="{{ education.pk }}"
+                                                                                id="education.pk">
+                <div id="add_education" class="education-field">
                     <input type="hidden" name="" id="education_pk">
                 </div>
                 <div class="btn btn-secondary" style="cursor: pointer" data-bs-toggle="modal"

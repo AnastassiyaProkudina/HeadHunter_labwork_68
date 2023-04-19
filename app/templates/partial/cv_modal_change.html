@@ -3,7 +3,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="post" action="{% url 'cv_change' cv.id %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'cv_update' cv.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="modal-header">
                     <h5 class="modal-title" id="ChangeProfileModalLabel">Редактирование резюме</h5>

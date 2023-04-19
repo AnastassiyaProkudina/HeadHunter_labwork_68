@@ -3,7 +3,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="post" action="{% url 'change' request.user.pk %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'update' request.user.pk %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="modal-header">
                     <h5 class="modal-title" id="ChangeProfileModalLabel">Редактирование профиля</h5>

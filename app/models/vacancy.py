@@ -12,7 +12,6 @@ class JobCategoryChoice(TextChoices):
     ART = "art", "Искусство"
     TOURISM = "tourism", "Туризм"
 
-
 # class Vacancy(models.Model):
 #     text = models.TextField(
 #         verbose_name="Текст", null=False, max_length=2200, blank=True

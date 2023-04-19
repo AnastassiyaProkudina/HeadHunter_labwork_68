@@ -1,7 +1,7 @@
 {% load static %}
 {% load django_bootstrap5 %}
 <div class="modal modal-lg fade" style="width: 90% !important;" id="EducationModal" tabindex="-1"
-     aria-labelledby="CommentModalLabel{{ post.id }}"
+     aria-labelledby="CommentModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -14,12 +14,15 @@
                     <input type="text" id="place" class="form-control" placeholder="Образовательное учреждение"/><br>
                     <input type="text" id="course" class="form-control" placeholder="Курс/Факультет"/><br>
                     <input type="text" id="specialization" class="form-control" placeholder="Специальность"/><br>
-                    <input type="text" id="started_at" class="form-control" placeholder="Начало обучения"/><br>
-                    <input type="text" id="finished_at" class="form-control" placeholder="Окончание обучения"/><br>
-                    <input type="button" id="btn-add-education" data-bs-dismiss="modal" value="Отправить"/>
+                    <input type="number" min="1960" max="2023" id="started_at" class="form-control"
+                           placeholder="Начало обучения"/><br>
+                    <input type="number" min="1960" max="2023" id="finished_at" class="form-control"
+                           placeholder="Окончание обучения"/><br>
+                    <input type="hidden" id="cv_education" data-cv={{ cv.id }}/><br>
+                    <input type="button" id="btn-add-education" data-bs-dismiss="modal"
+                           data-cvId={{ cv.id }}  value="Отправить"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{#<script src="{% static 'js/main.js' %}"></script>#}

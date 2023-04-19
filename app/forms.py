@@ -16,11 +16,16 @@ class CVCreateForm(forms.ModelForm):
             "job_category",
         ]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["salary"].widget.attrs.update({"required": True})
+        self.fields["position"].widget.attrs.update({"required": True})
+
 
 class ContactsForm(forms.ModelForm):
     class Meta:
         model = Contacts
-        fields = ["telegram", "email", "phone",  "facebook", "linkedin"]
+        fields = ["telegram", "email", "phone", "facebook", "linkedin"]
 
 
 class CVCreationMultiForm(MultiModelForm):
@@ -39,21 +44,3 @@ class CVCreationMultiForm(MultiModelForm):
             cv.contacts = contacts
             cv.save()
         return objects
-
-
-# class CVChangeMultiForm(MultiModelForm):
-#     form_classes = {
-#         "cv": CVCreateForm,
-#         "contacts": ContactsForm,
-#     }
-#
-#     def save(self, commit=True):
-#         objects = super(CVCreationMultiForm, self).save(commit=False)
-#
-#         if commit:
-#             contacts = objects["contacts"]
-#             contacts.save()
-#             cv = objects["cv"]
-#             cv.contacts = contacts
-#             cv.save()
-#         return objects

@@ -2,31 +2,30 @@
 {% load django_bootstrap5 %}
 {% block content %}
     <form method="post" enctype="multipart/form-data">
-       <div class="form">
+        <div class="form">
             {% csrf_token %}
-        {% bootstrap_form form %}
-       </div>
+            {% bootstrap_form form %}
+        </div>
         <div class="form_row">
             {% bootstrap_button button_type="submit" content='Зарегистрироваться' %}
         </div>
     </form>
     <script>
-    const employer = document.getElementsByClassName('form-label')
-    const employerInput = document.getElementById('id_username')
-    const employerButton = document.getElementsByClassName('form-check')[0]
-    function removeButton(){
-        if(employer[0].innerHTML === 'Имя'){
-            employer[0].innerHTML = 'Название компании'
-            employerInput.placeholder = 'Компания'
-        }
-        else if(employer[0].innerHTML === 'Название компании'){
-            employer[0].innerHTML = 'Имя'
-            employerInput.placeholder = 'Имя'
-        }
-    }
-    employerButton.addEventListener('click', removeButton)
-    
+        const employer = document.getElementsByClassName('form-label')
+        const employerInput = document.getElementById('id_username')
+        const employerButton = document.getElementsByClassName('form-check')[0]
 
+        function removeButton() {
+            if (employer[0].innerHTML === 'Имя') {
+                employer[0].innerHTML = 'Название компании'
+                employerInput.placeholder = 'Компания'
+            } else if (employer[0].innerHTML === 'Название компании') {
+                employer[0].innerHTML = 'Имя'
+                employerInput.placeholder = 'Имя'
+            }
+        }
+
+        employerButton.addEventListener('click', removeButton)
 
 
     </script>

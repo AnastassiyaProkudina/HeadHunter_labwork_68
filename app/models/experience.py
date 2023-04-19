@@ -22,13 +22,21 @@ class Experience(models.Model):
     duties = models.TextField(verbose_name="Должностные обязанности", blank=True)
     started_at = models.IntegerField(
         verbose_name="C",
-        validators=[MinValueValidator(1970), max_value_current_year],
+        validators=[MinValueValidator(1960), max_value_current_year],
         blank=False,
     )
     finished_at = models.IntegerField(
         verbose_name="По",
-        validators=[MinValueValidator(1970), max_value_current_year],
+        validators=[MinValueValidator(1960), max_value_current_year],
         blank=False,
+    )
+    cv = models.ForeignKey(
+        verbose_name="опыт",
+        to="CV",
+        related_name="experience",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
 
     @property
@@ -40,4 +48,5 @@ class Experience(models.Model):
             "duties": self.duties,
             "started_at": self.started_at,
             "finished_at": self.finished_at,
+            "cv_id": self.cv_id,
         }

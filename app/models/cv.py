@@ -39,7 +39,7 @@ class CV(models.Model):
     position = models.CharField(
         verbose_name="Должность", blank=False, null=True, max_length=50
     )
-    salary = models.IntegerField(verbose_name="Зарплата", blank=False)
+    salary = models.IntegerField(verbose_name="Зарплата", blank=False, null=True)
     education_level = models.TextField(
         max_length=100,
         choices=EducationLevelChoice.choices,
@@ -54,18 +54,6 @@ class CV(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True,
         verbose_name="Дата и время обновления",
-    )
-    education = models.ManyToManyField(
-        verbose_name="Образование",
-        to="Education",
-        related_name="cv_education",
-        blank=True,
-    )
-    experience = models.ManyToManyField(
-        verbose_name="Образование",
-        to="Education",
-        related_name="cv_experience",
-        blank=True,
     )
     contacts = models.ForeignKey(
         verbose_name="Контакты",
