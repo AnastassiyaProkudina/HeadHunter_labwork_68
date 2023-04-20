@@ -15,6 +15,7 @@ class VacancyListView(LoginRequiredMixin, ListView):
         self.user_obj = get_object_or_404(Account, pk=pk)
         vac_pk = request.GET.get('vac_pk')
         public = request.GET.get('public')
+
         if public:
             vacancy = get_object_or_404(Vacancy, pk=vac_pk)
             vacancy.is_published = 0
@@ -25,6 +26,7 @@ class VacancyListView(LoginRequiredMixin, ListView):
             vacancy.is_published = 1
             vacancy.save()
         update = request.GET.get('update')
+
         if update:
             vacancy = get_object_or_404(Vacancy, pk=vac_pk)
             vacancy.save()
