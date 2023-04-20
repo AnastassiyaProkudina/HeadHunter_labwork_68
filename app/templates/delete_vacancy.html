@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+    <h1>Вы уверены, что хотите удалить вакансию?</h1>
+    <form action="" method="post" style="margin-bottom: 520px;">
+        {% csrf_token %}
+        <input class="btn btn-success" type="submit" value="Да">
+        <a class="btn btn-danger" href="{% url 'vacancy' user.pk vacancy.pk %}">Нет</a>
+    </form>
+{% endblock %}

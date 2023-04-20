@@ -65,6 +65,7 @@ body {
     padding: 20px 0;
     display: flex;
     justify-content: center;
+    margin-left: 10%;
 }
 
 .content-box {
@@ -144,9 +145,13 @@ body {
 
 .card-size {
     min-width: 20rem !important;
-    max-width: 48%;
+    max-width: 20rem;
 }
 
 .table-cv {
-    margin-left: 4%;
+    margin: 4%;
+}
+
+.button_padding {
+    padding-left: 10px;
 }

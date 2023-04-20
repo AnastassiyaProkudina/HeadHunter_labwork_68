@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block title %}Update{% endblock %}
+
+{% block content %}
+
+    <h3>Редактирование вакансии</h3>
+
+    <div>
+        <form action="" method="POST">
+            <div class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% bootstrap_button button_type="submit" content="Сохранить" %}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}Create{% endblock %}
+
+
+{% block content %}
+<h1 class="title">Создать вакансию</h1>
+<form action="{% url 'vacancy_add' %}" method="post">
+    {% include 'partial/vacancy_form.html' with button_text='Создать' %}
+</form>
+{% endblock %}
+
