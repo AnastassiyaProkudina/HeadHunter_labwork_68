@@ -3,8 +3,8 @@
     <div class="card-header">
         {% if header == 'cvs' %}
             <div class="row g-o">
-                <div class="col-sm-7">
-                    <p class="card-text" data-cvUpdatedAt>{{ cv.updated_at }}</p>
+                <div class="col-sm-6">
+                    <p class="card-text">{{ cv.position }}</p>
                 </div>
                 <div class="col-sm-1 mx-1" data-bs-toggle="modal"
                      data-bs-target="#CVDetailModal{{ cv.id }}">
@@ -31,11 +31,21 @@
                                   width="30"></iconify-icon>
                     </button>
                 </div>
+                <div class="col-sm-1 mx-1">
+                    {% csrf_token %}
+                    <button type="button" data-id={{ cv.id }} class="button-in-cv-card update-cv
+                    "
+                    style="border: none; background-color:inherit;">
+                    <iconify-icon icon="ic:baseline-update" style="color: #0B0C10;"
+                                  width="30"></iconify-icon>
+                    </button>
+                </div>
             </div>
         {% endif %}
     </div>
     <div class="card-body">
-        <div class="card-text">{{ cv.position }}</div>
+        <div class="card-text">Последнее обновление:</div>
+        <div class="card-text card-update-{{ cv.id }}" id="card-update-{{ cv.id }}">{{ cv.updated_at }}</div>
     </div>
 </div>
 

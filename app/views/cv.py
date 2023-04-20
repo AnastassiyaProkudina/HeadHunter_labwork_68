@@ -38,6 +38,12 @@ def json_cv_delete(request, id, *args, **kwargs):
     return JsonResponse({'success': True, 'message': 'Delete', 'id': id})
 
 
+def json_cv_update(request, id, *args, **kwargs):
+    cv = get_object_or_404(CV, id=id)
+    cv.update()
+    return JsonResponse({'success': True, 'message': 'Delete', 'updated': cv.updated_at})
+
+
 class CVChangeView(LoginRequiredMixin, UpdateView):
     model = CV
     form_class = CVCreationMultiForm

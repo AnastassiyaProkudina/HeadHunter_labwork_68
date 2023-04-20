@@ -87,5 +87,28 @@
                     return false;
                 });
             });
+            $(document).ready(function () {
+                $("body").on("click", ".update-cv", function (e) {
+                    e.preventDefault();
+                    const id = $(this).data("id");
+
+                    $.ajax({
+                        url: "http://127.0.0.1:8000/json-cv-update/" + id,
+                        type: 'PUT',
+                        dataType: 'json',
+                        headers: {
+                            "X-CSRFTOKEN": "{{ csrf_token }}"
+                        },
+                        data: {
+                            id: id
+                        },
+                        success: function (response) {
+
+                            $(".card-update-" + id).text(new Date(response.updated).toString().slice(4, -34))
+                        }
+                    });
+                    return false;
+                });
+            });
         </script>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.db.models import TextChoices
+from django.utils import timezone
 
 from app.models.vacancy import JobCategoryChoice
 
@@ -63,3 +64,7 @@ class CV(models.Model):
         blank=True,
         null=True,
     )
+
+    def update(self, using=None, keep_parents=False):
+        self.update_at = timezone.now()
+        self.save()
