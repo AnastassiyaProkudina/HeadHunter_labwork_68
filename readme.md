@@ -5,3 +5,6 @@
 #for user John Doe:
 <br>email: john_doe@mail.com
 <br>Password: A123456a
+
+<br>email: too@mail.ru
+<br>Password: 1234
