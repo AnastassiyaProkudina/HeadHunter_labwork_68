@@ -3,7 +3,7 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
     <div class="border-bottom d-flex">
         <span class="button_padding">
         <a href="{% url 'vacancy_update' user.pk vacancy.pk %}" class="btn btn-success">Редактировать
@@ -21,7 +21,7 @@
         <a href="{% url 'vacancy_delete' user.pk vacancy.pk %}" class="btn btn-danger">Удалить вакансию</a><br>
         </span>
     </div>
-<br><br>
+{% endif %}<br><br>
 <span class="fs-1">{{ vacancy.job_title }}<br></span>
     <br><br>
 <span class="fs-4">Категория: </span><span class="fs-5">{{ vacancy.get_category_display }}<br></span>

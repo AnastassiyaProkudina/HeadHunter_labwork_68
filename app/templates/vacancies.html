@@ -11,6 +11,7 @@
                     <th scope="col">Название позиции</th>
                     <th scope="col">Дата обновления</th>
                     <th scope="col">Публикация</th>
+                    <th scope="col">Редактирование</th>
                     <th scope="col">Обновить публикацию</th>
                     <th scope="col">Удаление</th>
                 </tr>
@@ -19,7 +20,7 @@
                 {% for vacancy in vacancy_list %}
                     <tr>
                         <td class="col-3">
-                            <a class="list-unstyled text-dark" href="{% url 'vacancy' user.pk vacancy.pk %} ">
+                            <a class="list-unstyled text-dark" href="{% url 'vacancy' vacancy.pk %} ">
                                 {{ vacancy.job_title }}
                             </a>
                         </td>
@@ -31,6 +32,10 @@
                                 <input type="submit" class="btn btn-info" name="update"
                                        value="Обновить">
                             </form>
+                        </td>
+                        <td class="col-2">
+                            <a href="{% url 'vacancy_update' user.pk vacancy.pk %}" class="btn btn-success">Редактировать
+                                </a><br>
                         </td>
                         <td class="col-2">
                             {% if user_obj == user %}
@@ -49,7 +54,7 @@
                         </td>
                         <td class="col-2">
                             <a href="{% url 'vacancy_delete' user.pk vacancy.pk %}" class="btn btn-danger">Удалить
-                                вакансию</a><br>
+                                </a><br>
                         </td>
                     </tr>
                 {% endfor %}
