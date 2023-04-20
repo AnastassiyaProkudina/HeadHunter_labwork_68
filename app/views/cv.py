@@ -51,6 +51,8 @@ class CVChangeView(LoginRequiredMixin, UpdateView):
 
     def get_form_kwargs(self):
         kwargs = super(CVChangeView, self).get_form_kwargs()
+        self.object.status = "ACTIVE"
+        # self.object.save()
         kwargs.update(instance={
             'cv': self.object,
             'contacts': self.object.contacts,

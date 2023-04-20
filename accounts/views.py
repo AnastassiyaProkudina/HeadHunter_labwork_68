@@ -63,7 +63,8 @@ class AccountView(LoginRequiredMixin, DetailView):
     context_object_name = "user_obj"
 
     def get_context_data(self, **kwargs):
-        kwargs["cvs"] = CV.objects.filter(author_id=self.request.user.pk).order_by('-created_at')
+        kwargs["cvs"] = CV.objects.filter(author_id=self.request.user.pk).exclude(status='NOT_ACTIVE').order_by(
+            '-created_at')
         kwargs["change_form"] = UserChangeForm(instance=self.request.user)
         kwargs["change_cv_form"] = CVCreationMultiForm()
         kwargs["education_level_choices"] = EducationLevelChoice.choices

@@ -6,6 +6,11 @@ from django.utils import timezone
 from app.models.vacancy import JobCategoryChoice
 
 
+class StatusChoice(TextChoices):
+    ACTIVE = 'ACTIVE', 'Активна'
+    NOT_ACTIVE = 'NOT_ACTIVE', 'Неактивна'
+
+
 class EducationLevelChoice(TextChoices):
     SECONDARY = "secondary", "Среднее"
     SECONDARY_SPECIALIZED = "secondary specialized", "Среднее специальное"
@@ -18,6 +23,12 @@ class EducationLevelChoice(TextChoices):
 
 
 class CV(models.Model):
+    status = models.CharField(
+        verbose_name='Статус',
+        choices=StatusChoice.choices,
+        max_length=20,
+        default=StatusChoice.NOT_ACTIVE)
+
     author = models.ForeignKey(
         verbose_name="Автор",
         to=get_user_model(),
