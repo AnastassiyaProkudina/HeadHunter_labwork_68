@@ -23,7 +23,7 @@
                                 {{ vacancy.job_title }}
                             </a>
                         </td>
-                            <td class="col-3">{{ vacancy.updated_at }}</td>
+                        <td class="col-3">{{ vacancy.updated_at }}</td>
                         <td class="col-2">
                             <form action="" method="get">
                                 <input type="hidden" name="vac_pk"
@@ -48,7 +48,8 @@
                             {% endif %}
                         </td>
                         <td class="col-2">
-                            <a href="{% url 'vacancy_delete' user.pk vacancy.pk %}" class="btn btn-danger">Удалить вакансию</a><br>
+                            <a href="{% url 'vacancy_delete' user.pk vacancy.pk %}" class="btn btn-danger">Удалить
+                                вакансию</a><br>
                         </td>
                     </tr>
                 {% endfor %}
