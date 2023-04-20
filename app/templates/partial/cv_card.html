@@ -6,12 +6,12 @@
                 <div class="col-sm-6">
                     <p class="card-text">{{ cv.position }}</p>
                 </div>
-                <div class="col-sm-1 mx-1" data-bs-toggle="modal"
+                <div class="col-sm-1 mx-1" >
+                    <button type="button" style="border: none; background-color:inherit;" data-bs-toggle="modal"
                      data-bs-target="#CVDetailModal{{ cv.id }}">
-                    <a class="" href="#" role="button">
                         <iconify-icon icon="material-symbols:folder-open-outline" style="color: #0B0C10;"
                                       width="30"></iconify-icon>
-                    </a>
+                    </button>
                 </div>
                 {% include 'partial/cv_modal_detail.html' %}
                 <div class="col-sm-1 mx-1">
@@ -46,6 +46,22 @@
     <div class="card-body">
         <div class="card-text">Последнее обновление:</div>
         <div class="card-text card-update-{{ cv.id }}" id="card-update-{{ cv.id }}">{{ cv.updated_at }}</div>
+    </div>
+    <div class="card-footer">
+        <button type="button"
+                id="publish-cv-{{ cv.id }}"
+                {% if cv.published is False %}
+                class="btn btn-outline-success publish-cv publish-cv-{{ cv.id }}"
+                {% else %}
+                class="btn btn-outline-danger publish-cv publish-cv-{{ cv.id }}"
+                {% endif %}
+                data-id={{ cv.id }}>
+                {% if cv.published is False %}
+                    Опубликовать
+                {% else %}
+                    Снять с публикации
+                {% endif %}
+        </button>
     </div>
 </div>
 

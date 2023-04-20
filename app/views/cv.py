@@ -41,7 +41,16 @@ def json_cv_delete(request, id, *args, **kwargs):
 def json_cv_update(request, id, *args, **kwargs):
     cv = get_object_or_404(CV, id=id)
     cv.update()
-    return JsonResponse({'success': True, 'message': 'Delete', 'updated': cv.updated_at})
+    return JsonResponse({'success': True, 'message': 'Updated', 'updated': cv.updated_at})
+
+
+def json_cv_publish(request, id, *args, **kwargs):
+    cv = get_object_or_404(CV, id=id)
+    if cv.published is False:
+        cv.get_publish()
+    else:
+        cv.get_un_publish()
+    return JsonResponse({'success': True, 'message': 'Published', 'published': cv.published})
 
 
 class CVChangeView(LoginRequiredMixin, UpdateView):

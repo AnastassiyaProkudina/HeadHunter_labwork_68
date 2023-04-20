@@ -75,7 +75,16 @@ class CV(models.Model):
         blank=True,
         null=True,
     )
+    published = models.BooleanField(blank=False, default=False)
 
-    def update(self, using=None, keep_parents=False):
+    def update(self):
         self.update_at = timezone.now()
+        self.save()
+
+    def get_publish(self):
+        self.published = True
+        self.save()
+
+    def get_un_publish(self):
+        self.published = False
         self.save()

@@ -110,5 +110,31 @@
                     return false;
                 });
             });
+            $(document).ready(function () {
+                $("body").on("click", ".publish-cv", function (e) {
+                    e.preventDefault();
+                    const id = $(this).data("id");
+
+                    $.ajax({
+                        url: "http://127.0.0.1:8000/json-cv-publish/" + id,
+                        type: 'PUT',
+                        dataType: 'json',
+                        headers: {
+                            "X-CSRFTOKEN": "{{ csrf_token }}"
+                        },
+                        data: {
+                            id: id,
+                        },
+                        success: function (response) {
+                            if (response.published === true) {
+                                $(".publish-cv-" + id).text("Снять с публикации").removeClass("btn-outline-success").addClass("btn-outline-danger");
+                            } else {
+                                $(".publish-cv-" + id).text("Опубликовать").removeClass("btn-outline-danger").addClass("btn-outline-success");
+                            }
+                        }
+                    });
+                    return false;
+                });
+            });
         </script>
 {% endblock %}
