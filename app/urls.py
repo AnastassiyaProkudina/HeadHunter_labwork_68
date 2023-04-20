@@ -4,6 +4,7 @@ from app.views.base import IndexView
 from app.views.cv import CVCreateView, json_cv_delete, CVChangeView, json_cv_update
 from app.views.education import json_education_delete, json_education
 from app.views.experience import json_experience
+from app.views.vacancy import VacancyListView, VacancyView, CreateVacancyView, UpdateVacancyView, DeleteVacancyView
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
@@ -14,4 +15,10 @@ urlpatterns = [
     path('json-cv-update/<int:id>', json_cv_update, name='json_cv_update'),
     path("cv/<int:pk>/", CVChangeView.as_view(), name="cv_update"),
     path('json-education-delete/<int:id>', json_education_delete, name='json_education_delete'),
+    path("user/<int:pk>/vacancies/", VacancyListView.as_view(), name="vacancies"),
+    path("user/<int:user_pk>/vacancy/<int:pk>/", VacancyView.as_view(), name="vacancy"),
+    path("vacancy/add", CreateVacancyView.as_view(), name="vacancy_add"),
+    path("user/<int:user_pk>/vacancy/<int:pk>/update/", UpdateVacancyView.as_view(), name="vacancy_update"),
+    path("user/<int:upk>/vacancies/<int:pk>/delete/", DeleteVacancyView.as_view(), name="vacancy_delete"),
+
 ]
