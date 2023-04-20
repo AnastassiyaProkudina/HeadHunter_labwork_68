@@ -1,7 +1,7 @@
 from betterforms.multiform import MultiModelForm
 from django import forms
 
-from app.models import CV, Contacts
+from app.models import CV, Contacts, Vacancy
 
 
 class CVCreateForm(forms.ModelForm):
@@ -49,3 +49,15 @@ class CVCreationMultiForm(MultiModelForm):
             cv.contacts = contacts
             cv.save()
         return objects
+
+
+class VacancyForm(forms.ModelForm):
+    class Meta:
+        model = Vacancy
+        fields = ('job_title',
+                  'category',
+                  'salary',
+                  'description',
+                  'min_experience',
+                  'max_experience',
+                  )

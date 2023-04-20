@@ -80,9 +80,9 @@ WSGI_APPLICATION = "hh_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "hh_new_test",
-        "USER": "anakess",
-        "PASSWORD": "Aa123@",
+        "NAME": "hh_work",
+        "USER": "postgres",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "",
     }
