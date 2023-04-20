@@ -155,3 +155,8 @@ body {
 .button_padding {
     padding-left: 10px;
 }
+
+.list-group-item {
+    background-image: linear-gradient(to left, #bde3d0, #edf5ee);
+    width: 75%;
+}

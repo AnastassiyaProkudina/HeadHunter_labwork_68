@@ -3,7 +3,7 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-{% if user.is_authenticated %}
+{% if user.is_authenticated and request.user.pk == user_obj.pk and request.user.is_employer is True %}
     <div class="border-bottom d-flex">
         <span class="button_padding">
         <a href="{% url 'vacancy_update' user.pk vacancy.pk %}" class="btn btn-success">Редактировать

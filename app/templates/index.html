@@ -3,30 +3,32 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-    <div class="d-flex flex-row flex-wrap" style="margin-bottom: 380px;">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Название позиции</th>
-                <th scope="col">Дата обновления</th>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for vacancy in vacancy_list %}
+            {% if vacancy.is_published == False %}
+                <div class="col">
+                    <ol class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">
+                                    <a class="list-unstyled text-dark" href="{% url 'vacancy' vacancy.pk %} ">
+                                        {{ vacancy.job_title }}
+                                    </a>
+                                </div>
+                                <div class="fw-bold">Категория: {{ vacancy.get_category_display }}</div>
+                                <div class="fw-bold">Зарплата: {{ vacancy.salary }} тенге</div>
+                                <div class="fw-bold">Требуемый опыт работы:: {{ vacancy.min_experience }}
+                                    - {{ vacancy.max_experience }} лет
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            {% endif %}
+        {% empty %}
+            <h3>Список вакасий пуст</h3>
 
-            </tr>
-            </thead>
-            <tbody>
-            {% for vacancy in vacancy_list %}
-                {% if vacancy.is_published == False %}
-                <tr>
-                    <td class="col-3">
-                        <a class="list-unstyled text-dark" href="{% url 'vacancy' vacancy.pk %} ">
-                            {{ vacancy.job_title }}
-                        </a>
-                    </td>
-                    <td class="col-3">{{ vacancy.updated_at }}</td>
-                {% endif %}
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        {% endfor %}
     </div>
 
 {% endblock %}
