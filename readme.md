@@ -144,6 +144,27 @@
 
 
 
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/Profile_applicant.png" width="500" alt="Profile_applicant"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/Profile_employer.png" width="500" alt="Profile_employer"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/cv_example.png" width="600" alt="cv_example"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/cv_form.png" width="500" alt="cv_form"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/edit_profile.png" width="500" alt="edit_profile"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/login_form.png" width="900" alt="login_form"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/register.png" width="600" alt="register"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/registr_form.png" width="600" alt="registr_form"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/vacancy_form.png" width="600" alt="vacancy_form"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/vacancy_list.png" width="900" alt="vacancy_list"/>
+
+
 
 
 
