@@ -35,14 +35,15 @@
    $ git clone [https://github.com/USERNAME/REPOSITORY]
 ```
 
-После успешного клонирования проекта, создаем `виртуальное окружение` 
+После успешного клонирования проекта, создаем и активируем `виртуальное окружение` 
 ```python
    $ python3 -m virtualenv venv
 ```
 ```python
    $ source venv/bin/activate 
 ```
-и активируем все зависимости проекта:
+и загружаем все зависимости проекта:
+
 ```python
    pip3 install -r requirements.txt
 ```
