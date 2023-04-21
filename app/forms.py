@@ -1,7 +1,7 @@
 from betterforms.multiform import MultiModelForm
 from django import forms
 
-from app.models import CV, Contacts, Vacancy
+from app.models import CV, Contacts, Vacancy, Response
 
 
 class CVCreateForm(forms.ModelForm):
@@ -61,3 +61,9 @@ class VacancyForm(forms.ModelForm):
                   'min_experience',
                   'max_experience',
                   )
+
+
+class ResponseForm(forms.ModelForm):
+    class Meta:
+        model = Response
+        fields = ('vacancy', 'cv',)

@@ -10,6 +10,7 @@ from app.views.cv import (
 )
 from app.views.education import json_education_delete, json_education
 from app.views.experience import json_experience
+from app.views.responses import ResponsesListView
 from app.views.vacancy import (
     VacancyListView,
     VacancyView,
@@ -47,8 +48,9 @@ urlpatterns = [
         name="vacancy_update",
     ),
     path(
-        "user/<int:upk>/vacancy/<int:pk>/delete/",
+        "user/<int:user_pk>/vacancy/<int:pk>/delete/",
         DeleteVacancyView.as_view(),
         name="vacancy_delete",
     ),
+    path('user/<int:user_pk>/responses/', ResponsesListView.as_view(), name='responses'),
 ]
