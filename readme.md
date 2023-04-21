@@ -164,6 +164,9 @@
 
 <img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/vacancy_list.png" width="900" alt="vacancy_list"/>
 
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/Login_button.png" width="900" alt="Login_button"/>
+
+<img src="https://github.com/AnastassiyaProkudina/labwork_68_HH/blob/main/static/img/for_readme_md/register_button.png" width="900" alt="register_button"/>
 
 
 
