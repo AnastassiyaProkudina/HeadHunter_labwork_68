@@ -1,8 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
 body {
     color: #303233;
     font-family: Arial, sans-serif;
     line-height: 1.43;
-    font-size: 14px;
+    font-size: 16px;
+    height: 100%;
+}
+
+.container {
+    flex: 1 0 auto;
 }
 
 .navbar {
@@ -73,11 +87,9 @@ body {
 }
 
 .wrapper {
-    width: 100%;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-gap: 30px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .account {
@@ -159,4 +171,20 @@ body {
 .list-group-item {
     background-image: linear-gradient(to left, #bde3d0, #edf5ee);
     width: 75%;
+}
+
+
+footer {
+    padding-top: 3%;
+    background: #222324;
+    color: #d5d7d9;
+}
+
+.footer-title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.footer-text {
+    font-size: 12px;
 }

@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<div>
 <nav class="navbar">
     <div class="nav-wrapper">
         <a href="{% url 'index' %}">
@@ -59,11 +60,37 @@
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="content">
+<div class="container ">
+    <div class="content wrapper">
         {% block content %}{% endblock %}
     </div>
 </div>
+
+
+{#<footer class="footer">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-8 footer-block">#}
+{#                <h5 class="footer-title">HeadHunter</h5>#}
+{#                <p class="footer-text">Реклама на сайте</p>#}
+{#                <p class="footer-text">Защита персональных данных</p>#}
+{#                <p class="footer-text">Инвесторам</p>#}
+{#                <p class="footer-text">Условия оказания услуг</p>#}
+{#            </div>#}
+{#            <div class="col-4 ">#}
+{#                <h5 class="footer-title">Помощь</h5>#}
+{#                <p class="footer-text">Пользовательское соглашение</p>#}
+{#                <p class="footer-text">Каталог компаний</p>#}
+{#                <p class="footer-text">Работа по профессиям</p>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="copyright">#}
+{#            <p class="copyright-text">Copyright 2023</p>#}
+{#        </div>#}
+{#    </div>#}
+{#</footer>#}
+{#</div>#}
+
 <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
 </body>
 </html>

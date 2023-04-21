@@ -92,7 +92,7 @@ class UpdateVacancyView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse(
             "vacancy",
-            kwargs={"user_pk": self.request.user.pk, "pk": self.object.pk},
+            kwargs={"pk": self.object.pk},
         )
 
 
