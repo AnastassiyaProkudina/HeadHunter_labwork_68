@@ -3,13 +3,13 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-{% if user.is_authenticated and request.user.pk == user_obj.pk and request.user.is_employer == True %}
-    <div class="border-bottom d-flex">
+    {% if user.is_authenticated and request.user.pk == user_obj.pk and request.user.is_employer == True %}
+        <div class="border-bottom d-flex">
         <span class="button_padding">
         <a href="{% url 'vacancy_update' user.pk vacancy.pk %}" class="btn btn-success">Редактировать
             вакансию</a><br>
             </span>
-        <span class="button_padding">
+            <span class="button_padding">
         <form action="" method="get">
             <input type="hidden" name="vac_pk"
                    value="{{ vacancy.pk }}">
@@ -17,19 +17,26 @@
                    value="Обновить">
         </form>
             </span>
-        <span class="button_padding">
+            <span class="button_padding">
         <a href="{% url 'vacancy_delete' user.pk vacancy.pk %}" class="btn btn-danger">Удалить вакансию</a><br>
         </span>
-    </div>
-{% endif %}<br><br>
-<span class="fs-1">{{ vacancy.job_title }}<br></span>
+        </div>
+    {% endif %}<br><br>
+    <span class="fs-1">{{ vacancy.job_title }}<br></span>
     <br><br>
-<span class="fs-4">Категория: </span><span class="fs-5">{{ vacancy.get_category_display }}<br></span>
-<span class="fs-4">Зарплата: </span><span class="fs-5">{{ vacancy.salary }} тенге <br></span>
-<span class="fs-4">Описание позиции и условия: </span><span class="fs-5">{{ vacancy.description|linebreaks }}<br></span>
-<span class="fs-4">Требуемый опыт работы: </span><span class="fs-5">{{ vacancy.min_experience }} - {{ vacancy.max_experience }}
+    <span class="fs-4">Категория: </span><span class="fs-5">{{ vacancy.get_category_display }}<br></span>
+    <span class="fs-4">Зарплата: </span><span class="fs-5">{{ vacancy.salary }} тенге <br></span>
+    <span class="fs-4">Описание позиции и условия: </span>
+    <span class="fs-5">{{ vacancy.description|linebreaks }}<br></span>
+    <span class="fs-4">Требуемый опыт работы: </span>
+    <span class="fs-5">{{ vacancy.min_experience }} - {{ vacancy.max_experience }}
         лет<br></span>
     <br><br>
-<span class="fs-5">Дата обновления: </span><span class="fs-6">{{ vacancy.updated_at }}<br></span>
+    <span class="fs-5">Дата обновления: </span><span class="fs-6">{{ vacancy.updated_at }}<br></span>
 
+    <div class="col-2">
+        <button type="button" class="btn btn-success" >
+            Откликнуться
+        </button>
+    </div>
 {% endblock %}
