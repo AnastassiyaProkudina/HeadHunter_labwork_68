@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$600000$XbKnigSHKiatTRu7HGetko$XivaxbWZheytF2OfQ0n1+yBnajN+3LWawPk62UsA0YQ=",
-    "last_login": "2023-04-20T06:45:41.751Z",
+    "last_login": "2023-04-20T04:00:42.236Z",
     "is_superuser": true,
     "username": "admin@admin.com",
     "first_name": "Admin",
@@ -26,9 +26,9 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$600000$hGZdkxwbXDQDpLMERBnk6b$QuGbYkDfuDA9TKxCMwx35KaO/AXGhiWdKw8/uRP+/SI=",
-    "last_login": "2023-04-20T07:08:37.288Z",
+    "last_login": "2023-04-20T00:30:57.194Z",
     "is_superuser": false,
-    "username": "John",
+    "username": "john_doe@mail.com",
     "first_name": "John",
     "last_name": "Doe",
     "is_staff": false,
@@ -36,11 +36,35 @@
     "date_joined": "2023-04-17T15:49:07.743Z",
     "email": "john_doe@mail.com",
     "phone": "7054970436346",
-    "avatar": "user_pic/john_doe_SByB3tr.jpeg",
+    "avatar": "user_pic/default_user_pic.jpeg",
     "bio": "mlkmhp'srmh'pomlk njnljogeg;ikaemd",
     "is_employer": false,
     "groups": [
       1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$JKBUVgpIujPfcYFs5Q9XG3$fCg5iaJpTIckxhEv1bN9BC25AVYJYInC4AaldPCB5uA=",
+    "last_login": "2023-04-20T08:22:25.524Z",
+    "is_superuser": false,
+    "username": "TOO-Recrut",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-04-20T04:11:31.303Z",
+    "email": "too@mail.ru",
+    "phone": "87759596671",
+    "avatar": "user_pic/user_company.png",
+    "bio": "Агентство «Optimum Recruitment&Executive Search» один из ведущих игроков кадрового рынка в Казахстане, который специализируется в области подбора персонала высшего и среднего звена yже на протяжении 20 лет.\r\n\r\nЗа 19 лет работы на рынке мы успели поработать с более, чем 120 компаниями: торговые, производственные, фармацевтические, косметические, консалтинговые (финансовый, инвестиционный и юридический консалтинг), транспортные, IT и телекоммуникационные, электротехнические, страховые, банки и т.д.",
+    "is_employer": true,
+    "groups": [
+      2
     ],
     "user_permissions": []
   }
@@ -439,6 +463,42 @@
     "name": "Can view Вакансия",
     "content_type": 11,
     "codename": "view_vacancy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Отклик",
+    "content_type": 12,
+    "codename": "add_response"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Отклик",
+    "content_type": 12,
+    "codename": "change_response"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Отклик",
+    "content_type": 12,
+    "codename": "delete_response"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Отклик",
+    "content_type": 12,
+    "codename": "view_response"
   }
 },
 {

@@ -112,18 +112,6 @@ function createEducationCard({id, place, course, specialization, started_at, fin
     cardCloseButton.className = `btn-close btn-education-close-${cv_id}`;
     cardCloseButton.id = `btn-education-${id}`
     cardHeader.append(cardCloseButton);
-    // cardCloseButton.addEventListener('click', function () {
-    //     let req = new XMLHttpRequest();
-    //     req.onload = function () {
-    //         if (this.status === 200) {
-    //             cardEdu.style.display = "none";
-    //         }
-    //     }
-    //     req.open('DELETE', `http://127.0.0.1:8000/json-education-delete/${id}`);
-    //     req.setRequestHeader('Content-Type', 'application/json');
-    //     req.send(JSON.stringify({"pk": education}));
-    //
-    // })
 
     const cardEduBody = document.createElement('div');
     cardEduBody.className = "card-body";

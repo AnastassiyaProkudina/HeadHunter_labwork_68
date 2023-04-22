@@ -32,7 +32,6 @@ class ContactsForm(forms.ModelForm):
         self.fields["phone"].widget.attrs.update({"required": True})
 
 
-
 class CVCreationMultiForm(MultiModelForm):
     form_classes = {
         "cv": CVCreateForm,
@@ -63,7 +62,6 @@ class VacancyForm(forms.ModelForm):
                   )
 
 
-class ResponseForm(forms.ModelForm):
-    class Meta:
-        model = Response
-        fields = ('vacancy', 'cv',)
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=20, required=False)
+

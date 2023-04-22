@@ -10,7 +10,7 @@ from django.views.generic import (
 from django.urls import reverse
 from accounts.models import Account
 from app.forms import VacancyForm
-from app.models import Vacancy
+from app.models import Vacancy, CV, Response
 
 
 class VacancyListView(LoginRequiredMixin, ListView):
@@ -62,6 +62,22 @@ class VacancyView(DetailView):
             vacancy.save()
         return super(VacancyView, self).get(request, *args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        cvs = CV.objects.filter(author=request.user)
+        obj = self.model.objects.get(pk=kwargs.get('pk'))
+        for cv in cvs:
+            x = request.POST.get(str(cv.pk))
+            if str(x) == "on":
+                cv = CV.objects.get(pk=cv.pk)
+                resp, created = Response.objects.get_or_create(user=request.user, cv_id=cv.pk, vacancy_id=obj.pk)
+                resp.save()
+                return redirect(self.request.META.get("HTTP_REFERER"))
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        context["user_cvs"] = CV.objects.filter(author=self.request.user, status="ACTIVE")
+        return context
+
 
 class CreateVacancyView(LoginRequiredMixin, CreateView):
     template_name = "create_vacancy.html"
@@ -75,8 +91,7 @@ class CreateVacancyView(LoginRequiredMixin, CreateView):
             vacancy.author = request.user
             vacancy.save()
             return redirect("vacancies", pk=self.request.user.pk)
-        context = {}
-        context["form"] = form
+        context = {"form": form}
         return self.render_to_response(context)
 
     def get_success_url(self):
@@ -92,7 +107,7 @@ class UpdateVacancyView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse(
             "vacancy",
-            kwargs={"pk": self.object.pk},
+            kwargs={"user_pk": self.request.user.pk, "pk": self.object.pk},
         )
 
 

@@ -1,7 +1,16 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 
 class Response(models.Model):
+
+    user = models.ForeignKey(
+        verbose_name="Пользователь",
+        to=get_user_model(),
+        related_name="response_user",
+        on_delete=models.CASCADE,
+    )
+
     cv = models.ForeignKey(
         verbose_name='Резюме',
         to='app.CV',

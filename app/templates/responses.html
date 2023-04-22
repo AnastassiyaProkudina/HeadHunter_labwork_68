@@ -20,19 +20,22 @@
                             </a>
                         </td>
                         <td class="col-3">
-                            <a class="list-unstyled text-dark" href="{% url 'cv' user.pk response.cv.pk %}">
-                                {{ response.cv.position }}
-                            </a>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#CVDetailInRespModal{{ response.cv.pk }}">
+                            {{ response.cv.position }}
+                            </button>
                         </td>
+{#                        {% include 'partial/cv_modal_detail.html' %}#}
                         <td class="col-3">
                             <a class="list-unstyled text-dark"
-                               href="{% url 'profile' response.cv.author.primary_key %}">
-                                {{ response.cv.author }}
+                               href="{% url 'profile' response.vacancy.author.pk %}">
+                                {{ response.vacancy.author }}
                             </a>
                         </td>
                     </tr>
                 {% endfor %}
                 </tbody>
+
             </table>
         </div>
     {% endif %}

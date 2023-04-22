@@ -41,12 +41,30 @@
                         Отклики
                     </button>
             {% endif %}
+                        <div class="nav-items">
+            <div class="dropdown">
+                <div class="dropdown-toggle" data-bs-toggle="dropdown"
+                     aria-expanded="false" alt="search">
+                    <iconify-icon icon="material-symbols:search" width="30" style="color: white"></iconify-icon>
+                </div>
+                <ul class="dropdown-menu" style="margin-left: -201px; margin-top: 27px;">
+                    <li>
+                        {#                        {% bootstrap_form form %}#}
+                        <p>Поиск</p>
+                    </li>
+                </ul>
+            </div>
+                        </div>
             <div class="nav-items">
             <div class="dropdown">
                 <img src="{% static 'img/user.png' %}" class="icon-user dropdown-toggle" data-bs-toggle="dropdown"
                      aria-expanded="false" alt="profile">
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'profile' request.user.pk %}">Посмотреть профиль</a>
+                <ul class="dropdown-menu" style="margin-left: -72px">
+                    <li>
+                        <a class="dropdown-item" href="{% url 'profile' request.user.pk %}">Посмотреть профиль</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'responses' request.user.pk %}">Мои отклики</a>
                     </li>
                     <li>
                         <form action="{% url 'logout' %}?next={{ request.get_full_path }}" method="post">

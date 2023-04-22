@@ -48,7 +48,7 @@
         </div>
     </section>
     <div>
-        {% if request.user.pk == user_obj.pk and request.user.is_employer is False %}
+        {% if  user.is_authenticated and request.user.pk == user_obj.pk and request.user.is_employer is False %}
             <div class="container" style="justify-content: space-between">
                 <div class="table-cv">
                     <div class="card-group">

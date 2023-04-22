@@ -3,7 +3,7 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and request.user.pk == user_obj.pk and request.user.is_employer is True %}
         <div class="d-flex flex-row flex-wrap" style="margin-bottom: 380px;">
             <table class="table table-striped">
                 <thead>
