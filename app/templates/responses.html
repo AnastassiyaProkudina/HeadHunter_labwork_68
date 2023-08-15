@@ -8,11 +8,14 @@
                 <tr>
                     <th scope="col">Вакансия</th>
                     <th scope="col">Резюме</th>
-                    <th scope="col">Работодатель</th>
+                    <th scope="col">{% if request.user.is_employer == False %}Работодатель
+                    {% else %}Соискатель
+                    {% endif %}
+                    </th>
                 </tr>
                 </thead>
+                <tbody>
                 {% for response in responses %}
-                    <tbody>
                     <tr>
                         <td class="col-3">
                             <a class="list-unstyled text-dark" href="{% url 'vacancy' response.vacancy.pk %}">
@@ -21,21 +24,27 @@
                         </td>
                         <td class="col-3">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#CVDetailInRespModal{{ response.cv.pk }}">
-                            {{ response.cv.position }}
+                                    data-bs-target="#CVDetailInRespModal{{ response.cv.pk }}">
+                                {{ response.cv.position }}
                             </button>
+                            {% include 'partial/response_cv_detail.html' %}
                         </td>
-{#                        {% include 'partial/cv_modal_detail.html' %}#}
                         <td class="col-3">
-                            <a class="list-unstyled text-dark"
-                               href="{% url 'profile' response.vacancy.author.pk %}">
-                                {{ response.vacancy.author }}
-                            </a>
+                            {% if request.user.is_employer == False %}
+                                <a class="list-unstyled text-dark"
+                                   href="{% url 'profile' response.vacancy.author.pk %}">
+                                    {{ response.vacancy.author }}
+                                </a>
+                            {% else %}
+                                <a class="list-unstyled text-dark"
+                                   href="{% url 'profile' response.cv.author.pk %}">
+                                    {{ response.cv.author }}
+                                </a>
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}
                 </tbody>
-
             </table>
         </div>
     {% endif %}

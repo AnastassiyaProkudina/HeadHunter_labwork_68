@@ -79,7 +79,6 @@ body {
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    margin-left: 10%;
 }
 
 .content-box {
@@ -96,7 +95,6 @@ body {
     margin-top: 30px;
     margin-bottom: 25px;
     width: fit-content;
-    margin-left: 20%;
 }
 
 .logo-account {
@@ -156,8 +154,8 @@ body {
 }
 
 .card-size {
-    min-width: 20rem !important;
-    max-width: 20rem;
+    min-width: 23rem !important;
+    max-width: 23rem;
 }
 
 .table-cv {
@@ -187,4 +185,10 @@ footer {
 
 .footer-text {
     font-size: 12px;
+}
+
+.search-btn{
+    color: white;
+    border: none;
+    background-color: #222324;
 }

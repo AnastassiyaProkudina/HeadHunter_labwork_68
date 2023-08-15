@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load django_bootstrap5 %}
 {% block title %}Home{% endblock %}
+{% block menu %}
+    <div class="nav-items">
+        <button type="button" class="search-btn">
+            <iconify-icon icon="material-symbols:search" width="30" style="color: white"></iconify-icon>
+        </button>
+    </div>
+{% endblock %}
 {% block content %}
-
+    {% include 'partial/vacancy_search.html' %}
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for vacancy in vacancy_list %}
-            {% if vacancy.is_published == False %}
-                <div class="col">
+            {% if vacancy.is_published == 1 %}
+                <div class="vacancy col" data-vacancy="{{ vacancy.job_title }}">
                     <ol class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
@@ -27,9 +35,7 @@
             {% endif %}
         {% empty %}
             <h3>Список вакасий пуст</h3>
-
         {% endfor %}
     </div>
-
+    <script src="{% static 'js/vacancy_search.js' %}" defer></script>
 {% endblock %}
-

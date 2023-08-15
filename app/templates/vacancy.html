@@ -5,7 +5,7 @@
 {% block content %}
     {% if user.is_authenticated and request.user.is_employer == False %}
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Откликнуться
+            Откликнуться
         </button>
     {% endif %}
     {% include 'partial/modal_response.html' %}
@@ -39,32 +39,4 @@
         лет<br></span>
     <br><br>
     <span class="fs-5">Дата обновления: </span><span class="fs-6">{{ vacancy.updated_at }}<br></span>
-{#    <script type="text/javascript">#}
-{#        $(document).ready(function () {#}
-{#            $("body").on("click", ".add-response", function (e) {#}
-{##}
-{#                e.preventDefault();#}
-{#                const id = $(this).data("response");#}
-{##}
-{#                $.ajax({#}
-{#                    url: "http://127.0.0.1:8000/json-response-add/" + id,#}
-{#                    type: 'POST',#}
-{#                    dataType: 'json',#}
-{#                    headers: {#}
-{#                        "X-CSRFTOKEN": "{{ csrf_token }}"#}
-{#                    },#}
-{#                    data: {#}
-{#                        id: id#}
-{#                    },#}
-{#                    success: function (response) {#}
-{#                        if (response.message === true) {#}
-{#                            $(".publish-cv-" + id).text("Снять с публикации").removeClass("btn-outline-success").addClass("btn-outline-danger");#}
-{#                        } else {#}
-{#                            $(".publish-cv-" + id).text("Опубликовать").removeClass("btn-outline-danger").addClass("btn-outline-success");#}
-{#                        }#}
-{#                    }#}
-{#                });#}
-{#            });#}
-{#        });#}
-{#    </script>#}
 {% endblock %}

@@ -75,7 +75,8 @@ class VacancyView(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
-        context["user_cvs"] = CV.objects.filter(author=self.request.user, status="ACTIVE")
+        if self.request.user.is_authenticated and self.request.user.is_employer is False:
+            context["user_cvs"] = CV.objects.filter(author=self.request.user, published=1)
         return context
 
 

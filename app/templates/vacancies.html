@@ -44,10 +44,10 @@
                                            value="{{ vacancy.pk }}">
                                     {% if vacancy.is_published %}
                                         <input type="submit" class="btn btn-success" name="public"
-                                               value="Опубликовать">
+                                               value="Снять с публикации">
                                     {% else %}
                                         <input type="submit" class="btn btn-primary" name="not_public"
-                                               value="Снять с публикации">
+                                               value="Опубликовать">
                                     {% endif %}
                                 </form>
                             {% endif %}
